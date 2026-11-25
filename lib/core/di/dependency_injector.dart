@@ -3,8 +3,12 @@ import '../../core/authentication/cache/disk/hive.dart';
 import '../../core/authentication/delegates/rxdart/authentication.dart';
 import '../../core/network/client/dio/dio.dart';
 import '../network/response_handler/app/response_handler.dart';
+import '../../feature/address/domain/repository/address_repository.dart';
 import '../../feature/auth/data/data_sources/data_source.dart';
 import '../../feature/auth/data/repositories/authentication.dart';
+import '../../feature/location/cubit/location_cubit.dart';
+import '../../feature/location/device_location_service.dart';
+import '../../feature/location/geolocator_device_location_service.dart';
 import '../../feature/country/data/datasource/datasource.dart';
 import '../../feature/country/data/repository/repository.dart';
 import '../../feature/notifications/data/datasource/remote_datasource.dart';
@@ -122,6 +126,12 @@ final class DependencyInjector {
           dataSource: DependencyInjector._settingDataSource,
         );
       })
+      ..registerLazySingleton<AddressRepository>(() {
+        return MockAddressRepository();
+      })
+      ..registerLazySingleton<DeviceLocationService>(() {
+        return GeolocatorDeviceLocationService();
+      })
       // region DataSources
       ..registerLazySingleton<UserRemoteDataSource>(() {
         return UserRemoteDataSource(
@@ -229,6 +239,12 @@ final class DependencyInjector {
       )
       ..registerLazySingleton<ThemeCubit>(
         () => ThemeCubit(repository: DependencyInjector.userRepository),
+      )
+      ..registerLazySingleton<LocationCubit>(
+        () => LocationCubit(
+          _sl<AddressRepository>(),
+          _sl<DeviceLocationService>(),
+        )..init(),
       );
     // ..registerLazySingleton<OrderCubit>(
     //   () => OrderCubit(
@@ -406,5 +422,9 @@ final class DependencyInjector {
 
   static ThemeCubit get themeCubit {
     return _sl<ThemeCubit>();
+  }
+
+  static LocationCubit get locationCubit {
+    return _sl<LocationCubit>();
   }
 }

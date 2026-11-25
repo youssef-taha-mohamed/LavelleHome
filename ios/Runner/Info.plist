@@ -26,6 +26,19 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location to find nearby laundries and accurately deliver your orders.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need access to your camera to take photos for your profile and order attachments.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to your photo library to choose photos for your profile and order attachments.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need permission to save images to your photo library.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

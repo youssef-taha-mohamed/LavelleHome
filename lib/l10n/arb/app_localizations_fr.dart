@@ -1556,4 +1556,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get clear_filter => 'Effacer le filtre';
+
+  @override
+  String get current_location => 'Position actuelle';
 }

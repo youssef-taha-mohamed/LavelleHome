@@ -13,6 +13,7 @@ list(APPEND FLUTTER_PLUGIN_LIST
   firebase_database
   firebase_remote_config
   flutter_timezone
+  geolocator_windows
   permission_handler_windows
   rive_native
   share_plus

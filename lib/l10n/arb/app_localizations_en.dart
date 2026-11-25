@@ -1540,4 +1540,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get clear_filter => 'Clear filter';
+
+  @override
+  String get current_location => 'Current location';
 }

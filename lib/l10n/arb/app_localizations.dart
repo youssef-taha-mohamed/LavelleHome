@@ -2997,6 +2997,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Clear filter'**
   String get clear_filter;
+
+  /// No description provided for @current_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Current location'**
+  String get current_location;
 }
 
 class _AppLocalizationsDelegate

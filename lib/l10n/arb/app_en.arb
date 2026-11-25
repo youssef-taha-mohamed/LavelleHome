@@ -541,5 +541,6 @@
   "no_laundries_nearby": "No laundries nearby right now",
   "no_laundries_nearby_message": "Try changing your location or check back later",
   "no_laundries_for_service": "No nearby laundries offer this service",
-  "clear_filter": "Clear filter"
+  "clear_filter": "Clear filter",
+  "current_location": "Current location"
 }

@@ -9,10 +9,10 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get a_class => 'حصة';
+  String get a_class => 'Classes';
 
   @override
-  String get academic_courses => 'المناهج الأكاديمية';
+  String get academic_courses => 'Academic Courses';
 
   @override
   String get account => 'الحساب';
@@ -80,11 +80,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get application_info => 'معلومات التطبيق';
 
   @override
-  String get are_you_sure_clear_cart => 'هل أنت متأكد من إفراغ السلة بالكامل؟';
+  String get are_you_sure_clear_cart =>
+      'Are you sure you want to clear your cart?';
 
   @override
   String get are_you_sure_delete_item_cart =>
-      'هل أنت متأكد من حذف هذا العنصر من السلة؟';
+      'Are you sure you want to remove this item from the cart?';
 
   @override
   String get are_you_sure_you_want_exit => 'هل أنت متأكد من رغبتك في الخروج؟';
@@ -115,7 +116,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get back => 'رجوع';
 
   @override
-  String get back_button => 'رجوع';
+  String get back_button => 'Back';
 
   @override
   String get back_gain => 'اضغط مرة أخرى للخروج';
@@ -136,7 +137,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get booking_successful => 'تم الحجز بنجاح';
 
   @override
-  String get browse_courses => 'تصفح الدورات';
+  String get browse_courses => 'Browse Courses';
 
   @override
   String get build_number => 'رقم البناء';
@@ -151,7 +152,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cancel => 'إلغاء';
 
   @override
-  String get cart => 'السلة';
+  String get cart => 'Cart';
 
   @override
   String get change_completed_successfully => 'تم حفظ التغييرات بنجاح';
@@ -177,14 +178,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get checkout => 'إتمام الدفع';
 
   @override
-  String get child_personal_information => 'المعلومات الشخصية للطفل';
+  String get child_personal_information => 'Child\'s Personal Information';
 
   @override
-  String get choose_appropriate_method => 'اختر الطريقة المناسبة';
+  String get choose_appropriate_method => 'Choose the appropriate method';
 
   @override
   String get choose_appropriate_method_continue =>
-      'اختر الطريقة المناسبة للمتابعة';
+      'Choose the appropriate method to continue';
 
   @override
   String get choose_photo => 'اختيار صورة';
@@ -193,10 +194,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get choose_preferred_language => 'اختر لغتك المفضلة';
 
   @override
-  String get choose_your_account_type => 'اختر نوع حسابك';
+  String get choose_your_account_type => 'Choose your account type';
 
   @override
-  String get clear_shopping_cart => 'إفراغ سلة المشتريات';
+  String get clear_shopping_cart => 'Clear Shopping Cart';
 
   @override
   String get code_sent_successfully => 'تم إرسال الرمز بنجاح';
@@ -259,7 +260,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get continue_step => 'المتابعة';
 
   @override
-  String get courses => 'الدورات';
+  String get courses => 'Courses';
 
   @override
   String get create_account => 'إنشاء حساب';
@@ -317,7 +318,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get delete_account_warning =>
-      'سيتم حذف جميع بياناتك ودوراتك بشكل نهائي.';
+      'All your data and courses will be permanently deleted.';
 
   @override
   String get delete_all => 'حذف الكل';
@@ -326,7 +327,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get delete_all_notifications => 'حذف جميع الإشعارات';
 
   @override
-  String get delete_item_from_cart => 'حذف من السلة';
+  String get delete_item_from_cart => 'Remove from cart';
 
   @override
   String get details => 'التفاصيل';
@@ -365,17 +366,17 @@ class AppLocalizationsAr extends AppLocalizations {
   String get email_va => 'البريد الإلكتروني مطلوب';
 
   @override
-  String get empty_cart => 'سلة المشتريات فارغة';
+  String get empty_cart => 'Cart is empty';
 
   @override
   String get empty_cart_description =>
-      'تصفح الدورات المتاحة وأضفها إلى السلة للبدء';
+      'Explore our courses and add them to your cart to get started';
 
   @override
   String get enjoy => 'استمتع';
 
   @override
-  String get enter_class_now => 'دخول الحصة الآن';
+  String get enter_class_now => 'Enter Class Now';
 
   @override
   String get enter_otp => 'أدخل رمز التحقق';
@@ -395,66 +396,66 @@ class AppLocalizationsAr extends AppLocalizations {
   String get exit => 'خروج';
 
   @override
-  String get failed_to_resend_otp => 'فشل إعادة إرسال الرمز';
+  String get failed_to_resend_otp => 'Failed to resend code';
 
   @override
   String get faq_a1 =>
-      'منصة تعليمية رائدة تقدم دورات شاملة وحصصاً متخصصة لمساعدتك على التفوق والنجاح.';
+      'Konoz is an educational platform offering comprehensive courses and specialized lessons to support your learning journey.';
 
   @override
   String get faq_a2 =>
-      'يمكنك إنشاء حساب بالضغط على \'حساب جديد\' في صفحة الدخول واتباع خطوات التسجيل.';
+      'You can create an account by selecting \'New Account\' on the login screen and following the registration steps.';
 
   @override
   String get faq_a3 =>
-      'نوفر عدة وسائل دفع آمنة تشمل البطاقات البنكية والدفع الإلكتروني والتحويل البنكي المباشر.';
+      'We support multiple secure payment methods including online card payments and direct bank transfer.';
 
   @override
   String get faq_a4 =>
-      'نعم، جميع المعاملات المالية مشفرة وآمنة تماماً وفقاً لأعلى معايير الأمان العالمية.';
+      'Yes, all transactions are fully encrypted and adhere to highest global security standards.';
 
   @override
   String get faq_a5 =>
-      'اضغط على \'نسيت كلمة المرور؟\' في صفحة تسجيل الدخول وأدخل بريدك الإلكتروني لاستلام رمز إعادة التعيين.';
+      'Click on \'Forgot Password?\' on the login screen and enter your registered email to receive a reset code.';
 
   @override
   String get faq_a6 =>
-      'نعم، يمكنك الوصول لجميع محتويات الدورات المسجل بها في أي وقت من خلال لوحة التحكم الخاصة بك.';
+      'Yes, you have full access to enrolled course materials anytime via your dashboard.';
 
   @override
   String get faq_a7 =>
-      'يمكنك التواصل مع فريق الدعم عبر صفحة \'اتصل بنا\' أو البريد الإلكتروني أو الواتساب للحصول على مساعدة سريعة.';
+      'You can reach our support team through the Contact Us page, email, or WhatsApp for quick help.';
 
   @override
   String get faq_a8 =>
-      'نعم، يمكنك تجديد أي دورة مباشرة وبسهولة من خلال التطبيق.';
+      'Yes, you can easily renew any active or expiring course directly through the app.';
 
   @override
-  String get faq_q1 => 'ما هي منصة كنوز؟';
+  String get faq_q1 => 'What is the Konoz platform?';
 
   @override
-  String get faq_q2 => 'كيف يمكنني إنشاء حساب جديد؟';
+  String get faq_q2 => 'How do I create a new account?';
 
   @override
-  String get faq_q3 => 'ما هي طرق الدفع المتاحة؟';
+  String get faq_q3 => 'What payment methods are supported?';
 
   @override
-  String get faq_q4 => 'هل عملية الدفع آمنة؟';
+  String get faq_q4 => 'Is the payment process secure?';
 
   @override
-  String get faq_q5 => 'كيف يمكنني استعادة كلمة المرور؟';
+  String get faq_q5 => 'How can I reset my password?';
 
   @override
-  String get faq_q6 => 'هل يمكنني الوصول للدورات بعد التسجيل؟';
+  String get faq_q6 => 'Can I access courses after enrollment?';
 
   @override
-  String get faq_q7 => 'كيف يمكنني التواصل مع الدعم الفني؟';
+  String get faq_q7 => 'How do I contact technical support?';
 
   @override
-  String get faq_q8 => 'هل يمكنني تجديد اشتراك الدورات؟';
+  String get faq_q8 => 'Can I renew course subscriptions?';
 
   @override
-  String get faqs => 'الأسئلة الشائعة';
+  String get faqs => 'FAQs';
 
   @override
   String get female => 'أنثى';
@@ -466,14 +467,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get file_selected => 'تم اختيار الملف';
 
   @override
-  String get for_parent => 'ولي أمر';
+  String get for_parent => 'Parent';
 
   @override
   String get for_parent_text =>
-      'لأولياء الأمور لمتابعة المسيرة التعليمية لأبنائهم';
+      'For parents to follow up on their children\'s educational progress';
 
   @override
-  String get for_students => 'للطلاب';
+  String get for_students => 'For Students';
 
   @override
   String get for_your_vehicle => 'لخدمتك';
@@ -521,13 +522,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get good_morning => 'صباح الخير';
 
   @override
-  String get good_morning_tablet => 'صباح الخير';
+  String get good_morning_tablet => 'Good Morning';
 
   @override
   String get good_night => 'تصبح على خير';
 
   @override
-  String get good_night_tablet => 'تصبح على خير';
+  String get good_night_tablet => 'Good Night';
 
   @override
   String get google => 'جوجل';
@@ -536,7 +537,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get help_and_support => 'المساعدة والدعم';
 
   @override
-  String get high_quality_education => 'تعليم عالي الجودة';
+  String get high_quality_education => 'High Quality Education';
 
   @override
   String get home => 'الرئيسية';
@@ -549,10 +550,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get how_we_use_text =>
-      'نستخدم بياناتك لتقديم الدورات وتحسين الخدمات ومعالجة المدفوعات وإرسال التحديثات الهامة.';
+      'We use your data to deliver courses, improve services, process payments, and communicate important updates.';
 
   @override
-  String get iban => 'الآيبان (IBAN)';
+  String get iban => 'IBAN';
 
   @override
   String get important_reminders => 'تنبيهات هامة';
@@ -589,22 +590,22 @@ class AppLocalizationsAr extends AppLocalizations {
       'اسم المستخدم يحتوي على رموز غير صالحة';
 
   @override
-  String get items_basket => 'عناصر في السلة';
+  String get items_basket => 'items in basket';
 
   @override
-  String get job_title => 'المسمى الوظيفي';
+  String get job_title => 'Job Title';
 
   @override
-  String get keep_up_great => 'استمر في هذا الأداء الرائع!';
+  String get keep_up_great => 'Keep up the great work!';
 
   @override
-  String get knoz => 'كنوز';
+  String get knoz => 'Konoz';
 
   @override
-  String get knoz_education_app => 'تطبيق كنوز التعليمي';
+  String get knoz_education_app => 'Konoz Educational App';
 
   @override
-  String get konoz => 'كنوز';
+  String get konoz => 'Konoz';
 
   @override
   String get language => 'اللغة';
@@ -619,10 +620,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get laundry_tagline => 'عناية فاخرة بملابسك حتى باب بيتك';
 
   @override
-  String get lectures => 'المحاضرات';
+  String get lectures => 'Lectures';
 
   @override
-  String get lesson => 'الدرس';
+  String get lesson => 'Lesson';
 
   @override
   String get light_theme => 'الوضع الفاتح';
@@ -631,7 +632,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get list => 'القائمة';
 
   @override
-  String get loading_cart => 'جاري تحميل السلة...';
+  String get loading_cart => 'Loading Cart...';
 
   @override
   String get location_permission_required => 'إذن الموقع مطلوب';
@@ -652,11 +653,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get manage_notifications => 'إدارة الإشعارات';
 
   @override
-  String get manual_payment => 'الدفع اليدوي (تحويل بنكي)';
+  String get manual_payment => 'Manual Payment';
 
   @override
   String get manual_payment_instructions =>
-      'يرجى تحويل المبلغ إلى الحساب البنكي أدناه وإرفاق الإيصال';
+      'Please transfer the amount to the bank account below and attach the receipt';
 
   @override
   String get mark_all_as_read => 'تحديد الكل كمقروء';
@@ -684,13 +685,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get must_not_start_with_space => 'يجب ألا يبدأ بمسافة';
 
   @override
-  String get my_assessment => 'تقييماتي';
+  String get my_assessment => 'My Assessment';
 
   @override
-  String get my_courses => 'دوراتي';
+  String get my_courses => 'My Courses';
 
   @override
-  String get my_current_courses => 'دوراتي الحالية';
+  String get my_current_courses => 'My Current Courses';
 
   @override
   String get new_account => 'حساب جديد';
@@ -708,10 +709,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get next => 'التالي';
 
   @override
-  String get no_courses_subtitle => 'تصفح الدورات المتاحة وسجل لبدء التعلم';
+  String get no_courses_subtitle =>
+      'Browse available courses and enroll to start learning';
 
   @override
-  String get no_courses_title => 'لا توجد دورات حتى الآن';
+  String get no_courses_title => 'No Courses Yet';
 
   @override
   String get no_internet_connection => 'لا يوجد اتصال بالإنترنت';
@@ -742,10 +744,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get no_results_found => 'لم يتم العثور على نتائج';
 
   @override
-  String get no_sessions_for_this_day => 'لا توجد حصص مجدولة لهذا اليوم';
+  String get no_sessions_for_this_day => 'No sessions scheduled for this day';
 
   @override
-  String get no_sessions_scheduled_yet => 'لم يتم جدولة أي حصص بعد';
+  String get no_sessions_scheduled_yet => 'No sessions scheduled yet';
 
   @override
   String get no_unread_notifications => 'لا توجد إشعارات غير مقروءة';
@@ -785,7 +787,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get number_of_items => 'عدد العناصر';
 
   @override
-  String get number_of_sessions => 'عدد الحصص';
+  String get number_of_sessions => 'Number of Sessions';
 
   @override
   String get ok => 'حسناً';
@@ -819,10 +821,10 @@ class AppLocalizationsAr extends AppLocalizations {
       'يرجى إدخال الرمز المكون من 4 أرقام المرسل إليك';
 
   @override
-  String get overview => 'نظرة عامة';
+  String get overview => 'Overview';
 
   @override
-  String get packages => 'الباقات';
+  String get packages => 'Packages';
 
   @override
   String get password => 'كلمة المرور';
@@ -867,42 +869,44 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get pending_course_grace_period_deadline_prefix =>
-      'تنتهي فترة السماح في: ';
+      'Grace period ends on: ';
 
   @override
   String get pending_course_grace_period_desc =>
-      'دورتك في فترة السماح. يرجى التجديد قريباً لتجنب انقطاع الخدمة.';
+      'Your course is in the grace period. Please renew soon to avoid interruption.';
 
   @override
-  String get pending_course_nearing_completion_deadline_prefix => 'ينتهي في: ';
+  String get pending_course_nearing_completion_deadline_prefix =>
+      'Expires on: ';
 
   @override
   String get pending_course_nearing_completion_desc =>
-      'تقترب هذه الدورة من الانتهاء. جدد الآن لمواصلة التعلم دون انقطاع.';
+      'This course is nearing completion. Renew now to continue learning without interruption.';
 
   @override
-  String get pending_course_renew_now => 'تجديد الآن';
+  String get pending_course_renew_now => 'Renew Now';
 
   @override
-  String get pending_course_renewal_required => 'مطلوب التجديد';
+  String get pending_course_renewal_required => 'Renewal Required';
 
   @override
-  String get pending_course_renewal_window_closed => 'انتهت فترة التجديد';
+  String get pending_course_renewal_window_closed =>
+      'Renewal window has closed';
 
   @override
-  String get pending_course_view_details => 'عرض التفاصيل';
+  String get pending_course_view_details => 'View Details';
 
   @override
   String pending_courses_subtitle_plural(int count) {
-    return 'لديك $count دورات بانتظار التجديد';
+    return 'You have $count courses waiting for renewal';
   }
 
   @override
   String get pending_courses_subtitle_single =>
-      'لديك دورة واحدة بانتظار التجديد';
+      'You have 1 course waiting for renewal';
 
   @override
-  String get pending_courses_title => 'دورات بانتظار التجديد';
+  String get pending_courses_title => 'Pending Course Renewals';
 
   @override
   String get permanent_deletion_warning =>
@@ -950,13 +954,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get please_select_your_country => 'يرجى اختيار دولتك';
 
   @override
-  String get price_updated => 'تم تحديث السعر';
+  String get price_updated => 'Price updated';
 
   @override
   String get privacy_policy => 'سياسة الخصوصية';
 
   @override
-  String get privacy_policy_and_terms => 'سياسة الخصوصية والشروط';
+  String get privacy_policy_and_terms => 'Privacy Policy and Terms';
 
   @override
   String get profile_edit => 'تعديل الملف الشخصي';
@@ -974,7 +978,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get push_notifications => 'الإشعارات الفورية';
 
   @override
-  String get quran_courses => 'دورات القرآن الكريم';
+  String get quran_courses => 'Quran Courses';
 
   @override
   String get register => 'تسجيل';
@@ -991,7 +995,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get renew_your_package_now => 'جدد باقتك الآن';
+  String get renew_your_package_now => 'Renew your package now';
 
   @override
   String get resend => 'إعادة إرسال';
@@ -1070,7 +1074,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get sh_cart_desc => 'عرض العناصر المحددة وإتمام الشراء';
 
   @override
-  String get sh_courses_desc => 'تصفح والوصول إلى جميع دوراتك المسجلة';
+  String get sh_courses_desc => 'Browse and access all your enrolled courses';
 
   @override
   String get sh_dash_banner_desc => 'عرض التحديثات والإعلانات الهامة';
@@ -1080,29 +1084,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get sh_dash_courses_desc =>
-      'الوصول بسهولة إلى دوراتك الحالية ومتابعتها';
+      'Easily access and resume your active courses';
 
   @override
-  String get sh_dash_courses_title => 'دوراتي';
+  String get sh_dash_courses_title => 'My Courses';
 
   @override
-  String get sh_dash_stats_desc => 'تابع تقدمك وإنجازاتك التعليمية';
+  String get sh_dash_stats_desc =>
+      'Track your progress and learning achievements';
 
   @override
   String get sh_dash_stats_title => 'إحصائياتك';
 
   @override
-  String get sh_dash_suggested_desc => 'اكتشف دورات جديدة مقترحة خصيصاً لك';
+  String get sh_dash_suggested_desc =>
+      'Discover new courses recommended for you';
 
   @override
-  String get sh_dash_suggested_title => 'الدورات المقترحة';
+  String get sh_dash_suggested_title => 'Suggested Courses';
 
   @override
   String get sh_dash_upcoming_desc =>
-      'ابقَ على اطلاع على حصصك المجدولة القادمة';
+      'Stay updated on your next scheduled classes';
 
   @override
-  String get sh_dash_upcoming_title => 'الحصص القادمة';
+  String get sh_dash_upcoming_title => 'Upcoming Sessions';
 
   @override
   String get sh_hide => 'عدم الإظهار مجدداً';
@@ -1120,10 +1126,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get sh_next => 'التالي';
 
   @override
-  String get sh_parent_desc => 'اختر حساب ولي أمر لمتابعة تقدم أبنائك';
+  String get sh_parent_desc =>
+      'Choose parent account to follow up on your children\'s progress';
 
   @override
-  String get sh_parent_title => 'حساب ولي أمر';
+  String get sh_parent_title => 'Parent Account';
 
   @override
   String get sh_prev => 'السابق';
@@ -1132,13 +1139,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get sh_skip => 'تخطي';
 
   @override
-  String get sh_student_desc => 'اختر حساب طالب للوصول إلى دوراتك ودروسك';
+  String get sh_student_desc =>
+      'Choose student account to access your courses and lessons';
 
   @override
-  String get sh_student_title => 'حساب طالب';
+  String get sh_student_title => 'Student Account';
 
   @override
-  String get shopping_cart => 'سلة المشتريات';
+  String get shopping_cart => 'Shopping Cart';
 
   @override
   String get since => 'منذ';
@@ -1158,22 +1166,23 @@ class AppLocalizationsAr extends AppLocalizations {
   String get stay => 'البقاء';
 
   @override
-  String get student => 'طالب';
+  String get student => 'Student';
 
   @override
-  String get student_account => 'حساب طالب';
+  String get student_account => 'Student Account';
 
   @override
-  String get student_account_text => 'للطلاب لحضور الحصص ومتابعة الدورات';
+  String get student_account_text =>
+      'For students to attend classes and view courses';
 
   @override
-  String get subject => 'المادة';
+  String get subject => 'Subject';
 
   @override
   String get submit => 'إرسال';
 
   @override
-  String get suggested_courses => 'الدورات المقترحة';
+  String get suggested_courses => 'Suggested Courses';
 
   @override
   String get system_details => 'تفاصيل النظام';
@@ -1191,7 +1200,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get time => 'الوقت';
 
   @override
-  String get to_monitor_children => 'لمتابعة تقدم الأبناء';
+  String get to_monitor_children => 'To monitor children\'s progress';
 
   @override
   String get today => 'اليوم';
@@ -1203,7 +1212,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get total => 'الإجمالي';
 
   @override
-  String get total_lecture => 'إجمالي المحاضرات';
+  String get total_lecture => 'Total Lectures';
 
   @override
   String get total_payment_amount => 'إجمالي المبلغ المستحق';
@@ -1212,7 +1221,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get total_price => 'السعر الإجمالي';
 
   @override
-  String get track_children => 'متابعة الأبناء';
+  String get track_children => 'Track Children';
 
   @override
   String get unexpected_error => 'حدث خطأ غير متوقع';
@@ -1226,7 +1235,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get up_to_date => 'محدث لآخر إصدار';
 
   @override
-  String get upcoming_sessions => 'الحصص القادمة';
+  String get upcoming_sessions => 'Upcoming Sessions';
 
   @override
   String get update_now => 'تحديث الآن';
@@ -1275,16 +1284,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get view_all => 'عرض الكل';
 
   @override
-  String get view_assignment => 'عرض الواجب';
+  String get view_assignment => 'View Assignment';
 
   @override
-  String get view_course => 'عرض الدورة';
+  String get view_course => 'View Course';
 
   @override
   String get view_details => 'عرض التفاصيل';
 
   @override
-  String get view_family => 'عرض العائلة';
+  String get view_family => 'View Family';
 
   @override
   String get view_feedback => 'عرض الملاحظات';
@@ -1302,10 +1311,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get welcome => 'مرحباً';
 
   @override
-  String get welcome_to_k => 'مرحباً بك في كنوز';
+  String get welcome_to_k => 'Welcome to Konoz';
 
   @override
-  String get welcome_to_konoz => 'مرحباً بك في كنوز';
+  String get welcome_to_konoz => 'Welcome to Konoz';
 
   @override
   String get welcome_to_lavelle => 'أهلاً بك في لافيل';
@@ -1524,4 +1533,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get clear_filter => 'إزالة الفلتر';
+
+  @override
+  String get current_location => 'الموقع الحالي';
 }

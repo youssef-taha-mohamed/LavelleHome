@@ -203,6 +203,8 @@ Future<void> main() async {
           providers: [
             BlocProvider(create: (context) => DependencyInjector.themeCubit),
             BlocProvider(create: (context) => DependencyInjector.languageCubit),
+            // يُوفَّر مرة واحدة على مستوى التطبيق (فوق MaterialApp) ليراه الـ Shell والـ Checkout والخريطة.
+            BlocProvider(create: (context) => DependencyInjector.locationCubit),
             ChangeNotifierProvider(create: (context) => CartProvider.instance),
             ChangeNotifierProvider(
               create: (_) => NavigationProvider.instance,

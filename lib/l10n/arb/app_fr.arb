@@ -541,5 +541,6 @@
   "no_laundries_nearby": "Aucune laverie à proximité pour le moment",
   "no_laundries_nearby_message": "Essayez de changer votre position ou réessayez plus tard",
   "no_laundries_for_service": "Aucune laverie à proximité ne propose ce service",
-  "clear_filter": "Effacer le filtre"
+  "clear_filter": "Effacer le filtre",
+  "current_location": "Position actuelle"
 }
