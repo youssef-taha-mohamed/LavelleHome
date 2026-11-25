@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "550600864447",
+    "project_id": "lavelle-fa1ec",
+    "storage_bucket": "lavelle-fa1ec.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550600864447:android:6ff9b1792af757ab180c0a",
+        "android_client_info": {
+          "package_name": "com.lavelle.go"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq6F7Wu9Y26k0hnaaMK8NRBHEL3YS5KZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550600864447:android:68032b91749eecb2180c0a",
+        "android_client_info": {
+          "package_name": "com.lavelle.home"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq6F7Wu9Y26k0hnaaMK8NRBHEL3YS5KZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550600864447:android:79efec70f3f11efa180c0a",
+        "android_client_info": {
+          "package_name": "com.lavelle.lavelle_pro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq6F7Wu9Y26k0hnaaMK8NRBHEL3YS5KZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
