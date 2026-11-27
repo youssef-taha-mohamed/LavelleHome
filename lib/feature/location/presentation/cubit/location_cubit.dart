@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../address/domain/entities/address.dart';
-import '../../address/domain/repository/address_repository.dart';
-import '../device_location_service.dart';
+import '../../../address/domain/entities/address.dart';
+import '../../../address/domain/repository/address_repository.dart';
+import '../../device_location_service.dart';
 part 'location_state.dart';
 
 // يُوفَّر مرة واحدة على مستوى التطبيق (فوق MaterialApp) ليراه الـ Shell والـ Checkout والخريطة.

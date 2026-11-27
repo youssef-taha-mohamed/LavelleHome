@@ -18,7 +18,7 @@ import '../../feature/auth/presentation/social_login/cubit/social_login_cubit.da
 import '../../feature/auth/presentation/social_register/cubit/social_register_cubit.dart';
 import '../../feature/auth/presentation/social_register/view/social_complete_profile_screen.dart';
 import '../../feature/botttom_nav_bar/nav_bar.dart';
-import '../../feature/home/presentation/view/home_screen.dart';
+import '../../feature/laundry/presentation/view/home_screen.dart';
 import '../../feature/notifications/domain/entities/parameter/notification_details_arg.dart';
 import '../../feature/notifications/presentation/mobile/notification_details.dart';
 import '../../feature/setting/presentation/cubit/setting_cubit.dart';
@@ -36,7 +36,6 @@ import '../../feature/shop/presentation/view/shop_view.dart';
 import '../../feature/profile/presentation/view/profile_view.dart';
 import '../../feature/setting/presentation/view/setting_view.dart';
 import '../../shared/screens/mobile/language/language_screen.dart';
-import '../../shared/screens/mobile/account_type/select_type.dart';
 import '../../shared/screens/mobile/splash/splash_view.dart';
 import '../authentication/provider.dart';
 import '../di/dependency_injector.dart';
@@ -351,10 +350,10 @@ abstract final class AppRouter {
       //   return guardArgs<SubjectsScreenArguments>(
       //     (arg) => SubjectsScreen(arguments: arg),
       //   );
-      case AccountTypeSelectionScreen.routeName:
-        return buildRoute(
-          builder: (context) => const AccountTypeSelectionScreen(),
-        );
+      // case AccountTypeSelectionScreen.routeName:
+      //   return buildRoute(
+      //     builder: (context) => const AccountTypeSelectionScreen(),
+      //   );
       case CountriesGuestView.routeName:
         return buildRoute(builder: (context) => const CountriesGuestView());
       case SettingView.routeName:

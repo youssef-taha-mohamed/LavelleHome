@@ -1,7 +1,11 @@
 import '../../../../shared/widgets/shared_widgets.dart';
+import '../../../address/presentation/widgets/address_labels.dart';
+import '../../../location/presentation/cubit/location_cubit.dart';
+import '../../../location/presentation/widgets/location_sheet.dart';
 import '../../../notifications/presentation/view/notification_screen.dart';
+import '../../../search/presentation/view/search_screen.dart';
 import '../../data/home_repo.dart';
-import '../cubits/home_cubit.dart';
+import '../cubits/laundry/home_cubit.dart';
 import 'widgets/home_body.dart';
 import 'widgets/home_header.dart';
 
@@ -21,10 +25,16 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) =>
-          HomeCubit(const MockHomeRepository(scenario: HomeScenario.normal))
-            ..load(),
-      child: const _HomeView(),
+      create: (ctx) => HomeCubit(
+        const MockHomeRepository(scenario: HomeScenario.normal),
+        currentLocation: () => ctx.read<LocationCubit>().state.selected,
+      )..load(),
+      // عند تغيير الموقع المختار نعيد تحميل الرئيسية
+      child: BlocListener<LocationCubit, LocationState>(
+        listenWhen: (a, b) => a.selected?.key != b.selected?.key,
+        listener: (ctx, _) => ctx.read<HomeCubit>().load(),
+        child: const _HomeView(),
+      ),
     );
   }
 }
@@ -65,6 +75,7 @@ class _HomeView extends StatelessWidget {
               ),
               BlocBuilder<HomeCubit, HomeState>(
                 builder: (context, state) {
+                  final loc = context.watch<LocationCubit>().state;
                   return Padding(
                     padding: EdgeInsets.fromLTRB(0, topInset + 12, 0, 28),
                     child: Column(
@@ -74,10 +85,13 @@ class _HomeView extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(horizontal: 12.0),
                           child: LavelleReveal(
                             child: HomeHeader(
-                              locationLabel: state.locationLabel,
-                              // TODO(خطوة 2): افتح showLocationSheet(context)
-                              onLocationTap: () =>
-                                  _comingSoon(context, 'Step 2 · Location sheet'),
+                              locationLabel: loc.selected == null
+                                  ? null
+                                  : selectedLocationLabel(
+                                      context,
+                                      loc.selected,
+                                    ),
+                              onLocationTap: () => showLocationSheet(context),
                               onBellTap: () async {
                                 if (!await ensureAuthenticated(context)) return;
                                 if (!context.mounted) return;
@@ -97,9 +111,12 @@ class _HomeView extends StatelessWidget {
                           child: LavelleReveal(
                             begin: 0.1,
                             child: _SearchRow(
-                              // TODO(خطوة 3): Navigator.pushNamed(search)
-                              onSearchTap: () =>
-                                  _comingSoon(context, 'Step 3 · Search'),
+                              onSearchTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => const LaundrySearchScreen(),
+                                ),
+                              ),
                               // TODO(خطوة 5): Navigator.pushNamed(map)
                               onMapTap: () =>
                                   _comingSoon(context, 'Step 5 · Map'),
@@ -110,7 +127,7 @@ class _HomeView extends StatelessWidget {
                         LavelleReveal(
                           begin: 0.25,
                           dy: 36,
-                          child: HomeBody(state: state),
+                          child: HomeBody(state: state, location: loc),
                         ),
                       ],
                     ),

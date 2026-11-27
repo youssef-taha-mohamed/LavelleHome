@@ -1804,12 +1804,6 @@ abstract class AppLocalizations {
   /// **'This action is permanent and cannot be undone.'**
   String get permanent_deletion_warning;
 
-  /// No description provided for @personal_information.
-  ///
-  /// In en, this message translates to:
-  /// **'Personal Information'**
-  String get personal_information;
-
   /// No description provided for @phone_number.
   ///
   /// In en, this message translates to:
@@ -2596,12 +2590,6 @@ abstract class AppLocalizations {
   /// **'With'**
   String get with_to;
 
-  /// No description provided for @working_hours.
-  ///
-  /// In en, this message translates to:
-  /// **'Working Hours'**
-  String get working_hours;
-
   /// No description provided for @working_hours_time.
   ///
   /// In en, this message translates to:
@@ -2697,90 +2685,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Welcome to Lavelle'**
   String get splash_welcome;
-
-  /// No description provided for @register_subtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Create your account and enjoy premium laundry care at your doorstep'**
-  String get register_subtitle;
-
-  /// No description provided for @delivery_address.
-  ///
-  /// In en, this message translates to:
-  /// **'Delivery Address'**
-  String get delivery_address;
-
-  /// No description provided for @select_area.
-  ///
-  /// In en, this message translates to:
-  /// **'Select Area'**
-  String get select_area;
-
-  /// No description provided for @address_preview.
-  ///
-  /// In en, this message translates to:
-  /// **'Address Preview'**
-  String get address_preview;
-
-  /// No description provided for @area_madinaty.
-  ///
-  /// In en, this message translates to:
-  /// **'Madinaty'**
-  String get area_madinaty;
-
-  /// No description provided for @area_shorouk.
-  ///
-  /// In en, this message translates to:
-  /// **'El Shorouk'**
-  String get area_shorouk;
-
-  /// No description provided for @area_other.
-  ///
-  /// In en, this message translates to:
-  /// **'Other Area'**
-  String get area_other;
-
-  /// No description provided for @group_number.
-  ///
-  /// In en, this message translates to:
-  /// **'Group'**
-  String get group_number;
-
-  /// No description provided for @building_number.
-  ///
-  /// In en, this message translates to:
-  /// **'Building'**
-  String get building_number;
-
-  /// No description provided for @apartment_number.
-  ///
-  /// In en, this message translates to:
-  /// **'Apartment'**
-  String get apartment_number;
-
-  /// No description provided for @district_number.
-  ///
-  /// In en, this message translates to:
-  /// **'District'**
-  String get district_number;
-
-  /// No description provided for @neighborhood_number.
-  ///
-  /// In en, this message translates to:
-  /// **'Neighborhood'**
-  String get neighborhood_number;
-
-  /// No description provided for @area_name.
-  ///
-  /// In en, this message translates to:
-  /// **'Area Name'**
-  String get area_name;
-
-  /// No description provided for @address_details.
-  ///
-  /// In en, this message translates to:
-  /// **'Address Details (Street / Building / Apt)'**
-  String get address_details;
 
   /// No description provided for @please_enter_name.
   ///
@@ -2998,11 +2902,383 @@ abstract class AppLocalizations {
   /// **'Clear filter'**
   String get clear_filter;
 
+  /// No description provided for @choose_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your location'**
+  String get choose_location;
+
+  /// No description provided for @use_current_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Use my current location'**
+  String get use_current_location;
+
+  /// No description provided for @use_current_location_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ll find the closest laundries'**
+  String get use_current_location_hint;
+
   /// No description provided for @current_location.
   ///
   /// In en, this message translates to:
-  /// **'Current location'**
+  /// **'My current location'**
   String get current_location;
+
+  /// No description provided for @my_addresses.
+  ///
+  /// In en, this message translates to:
+  /// **'My addresses'**
+  String get my_addresses;
+
+  /// No description provided for @no_saved_addresses.
+  ///
+  /// In en, this message translates to:
+  /// **'No saved addresses yet'**
+  String get no_saved_addresses;
+
+  /// No description provided for @add_new_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a new address'**
+  String get add_new_address;
+
+  /// No description provided for @new_address.
+  ///
+  /// In en, this message translates to:
+  /// **'New address'**
+  String get new_address;
+
+  /// No description provided for @save_and_use_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Save and use this address'**
+  String get save_and_use_address;
+
+  /// No description provided for @location_permission_denied.
+  ///
+  /// In en, this message translates to:
+  /// **'We couldn\'t access your location. Try again or choose your address manually.'**
+  String get location_permission_denied;
+
+  /// No description provided for @location_permission_forever.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission is off. Enable it in app settings or choose your address manually.'**
+  String get location_permission_forever;
+
+  /// No description provided for @location_service_disabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Location services are off on your device. Turn them on or choose your address manually.'**
+  String get location_service_disabled;
+
+  /// No description provided for @location_unavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'We couldn\'t detect your location right now. Please try again'**
+  String get location_unavailable;
+
+  /// No description provided for @open_settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open settings'**
+  String get open_settings;
+
+  /// No description provided for @try_again.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get try_again;
+
+  /// No description provided for @change_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Change location'**
+  String get change_location;
+
+  /// No description provided for @select_area.
+  ///
+  /// In en, this message translates to:
+  /// **'Select your area'**
+  String get select_area;
+
+  /// No description provided for @area_madinaty.
+  ///
+  /// In en, this message translates to:
+  /// **'Madinaty'**
+  String get area_madinaty;
+
+  /// No description provided for @area_shorouk.
+  ///
+  /// In en, this message translates to:
+  /// **'Shorouk'**
+  String get area_shorouk;
+
+  /// No description provided for @area_other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other area'**
+  String get area_other;
+
+  /// No description provided for @group_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Group number'**
+  String get group_number;
+
+  /// No description provided for @building_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Building number'**
+  String get building_number;
+
+  /// No description provided for @apartment_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Apartment number'**
+  String get apartment_number;
+
+  /// No description provided for @district_number.
+  ///
+  /// In en, this message translates to:
+  /// **'District number'**
+  String get district_number;
+
+  /// No description provided for @neighborhood_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Neighborhood number'**
+  String get neighborhood_number;
+
+  /// No description provided for @area_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Area name'**
+  String get area_name;
+
+  /// No description provided for @address_details.
+  ///
+  /// In en, this message translates to:
+  /// **'Address details'**
+  String get address_details;
+
+  /// No description provided for @address_preview.
+  ///
+  /// In en, this message translates to:
+  /// **'Address format'**
+  String get address_preview;
+
+  /// No description provided for @register_subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your account and we\'ll come to your door'**
+  String get register_subtitle;
+
+  /// No description provided for @personal_information.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal information'**
+  String get personal_information;
+
+  /// No description provided for @delivery_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Pickup and delivery address'**
+  String get delivery_address;
+
+  /// No description provided for @search_idle_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Find your laundry'**
+  String get search_idle_title;
+
+  /// No description provided for @search_idle_message.
+  ///
+  /// In en, this message translates to:
+  /// **'Type a laundry name or your area'**
+  String get search_idle_message;
+
+  /// No description provided for @search_results_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Search results'**
+  String get search_results_title;
+
+  /// No description provided for @no_search_results.
+  ///
+  /// In en, this message translates to:
+  /// **'No results found'**
+  String get no_search_results;
+
+  /// No description provided for @no_search_results_message.
+  ///
+  /// In en, this message translates to:
+  /// **'Try a different name or your area'**
+  String get no_search_results_message;
+
+  /// No description provided for @clear_search.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear search'**
+  String get clear_search;
+
+  /// No description provided for @recent_searches.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent searches'**
+  String get recent_searches;
+
+  /// No description provided for @clear_all.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear all'**
+  String get clear_all;
+
+  /// No description provided for @ordering_from.
+  ///
+  /// In en, this message translates to:
+  /// **'Ordering from'**
+  String get ordering_from;
+
+  /// No description provided for @start_order.
+  ///
+  /// In en, this message translates to:
+  /// **'Start order'**
+  String get start_order;
+
+  /// No description provided for @services_and_prices.
+  ///
+  /// In en, this message translates to:
+  /// **'Services & prices'**
+  String get services_and_prices;
+
+  /// No description provided for @services_not_listed.
+  ///
+  /// In en, this message translates to:
+  /// **'This laundry hasn\'t listed its services yet'**
+  String get services_not_listed;
+
+  /// No description provided for @working_hours.
+  ///
+  /// In en, this message translates to:
+  /// **'Working hours'**
+  String get working_hours;
+
+  /// No description provided for @hours_unavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Working hours are not available right now'**
+  String get hours_unavailable;
+
+  /// No description provided for @closed_day.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get closed_day;
+
+  /// No description provided for @location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get location;
+
+  /// No description provided for @location_info_unavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Location details are not available'**
+  String get location_info_unavailable;
+
+  /// No description provided for @show_on_map.
+  ///
+  /// In en, this message translates to:
+  /// **'Show on map'**
+  String get show_on_map;
+
+  /// No description provided for @get_directions.
+  ///
+  /// In en, this message translates to:
+  /// **'Directions'**
+  String get get_directions;
+
+  /// No description provided for @visit_or_order_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'You can visit the laundry yourself or request pickup and delivery'**
+  String get visit_or_order_hint;
+
+  /// No description provided for @cannot_open_maps.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t open the maps app'**
+  String get cannot_open_maps;
+
+  /// No description provided for @offers_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Offers'**
+  String get offers_title;
+
+  /// No description provided for @valid_until.
+  ///
+  /// In en, this message translates to:
+  /// **'Valid until'**
+  String get valid_until;
+
+  /// No description provided for @offer_kind_discount.
+  ///
+  /// In en, this message translates to:
+  /// **'Discount'**
+  String get offer_kind_discount;
+
+  /// No description provided for @offer_kind_package.
+  ///
+  /// In en, this message translates to:
+  /// **'Package'**
+  String get offer_kind_package;
+
+  /// No description provided for @offer_kind_subscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscription'**
+  String get offer_kind_subscription;
+
+  /// No description provided for @unit_piece.
+  ///
+  /// In en, this message translates to:
+  /// **'per piece'**
+  String get unit_piece;
+
+  /// No description provided for @unit_kg.
+  ///
+  /// In en, this message translates to:
+  /// **'per kg'**
+  String get unit_kg;
+
+  /// No description provided for @unit_sqm.
+  ///
+  /// In en, this message translates to:
+  /// **'per m²'**
+  String get unit_sqm;
+
+  /// No description provided for @laundry_closed_notice.
+  ///
+  /// In en, this message translates to:
+  /// **'This laundry is closed right now. See working hours below.'**
+  String get laundry_closed_notice;
+
+  /// No description provided for @laundry_unavailable_notice.
+  ///
+  /// In en, this message translates to:
+  /// **'This laundry is temporarily not accepting orders.'**
+  String get laundry_unavailable_notice;
+
+  /// No description provided for @laundry_unavailable_order.
+  ///
+  /// In en, this message translates to:
+  /// **'You can\'t order from this laundry right now'**
+  String get laundry_unavailable_order;
 }
 
 class _AppLocalizationsDelegate

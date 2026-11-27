@@ -913,9 +913,6 @@ class AppLocalizationsAr extends AppLocalizations {
       'هذا الإجراء نهائي ولا يمكن التراجع عنه.';
 
   @override
-  String get personal_information => 'المعلومات الشخصية';
-
-  @override
   String get phone_number => 'رقم الهاتف';
 
   @override
@@ -1329,9 +1326,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get with_to => 'مع';
 
   @override
-  String get working_hours => 'ساعات العمل';
-
-  @override
   String get working_hours_time => 'الأحد - الخميس: 9:00 ص - 6:00 م';
 
   @override
@@ -1380,49 +1374,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get splash_welcome => 'مرحباً بك في لافيل';
-
-  @override
-  String get register_subtitle =>
-      'أنشئ حسابك واستمتع بعناية فاخرة لملابسك حتى باب بيتك';
-
-  @override
-  String get delivery_address => 'عنوان التوصيل';
-
-  @override
-  String get select_area => 'اختر المنطقة';
-
-  @override
-  String get address_preview => 'معاينة العنوان';
-
-  @override
-  String get area_madinaty => 'مدينتي';
-
-  @override
-  String get area_shorouk => 'الشروق';
-
-  @override
-  String get area_other => 'منطقة أخرى';
-
-  @override
-  String get group_number => 'المجموعة';
-
-  @override
-  String get building_number => 'العمارة';
-
-  @override
-  String get apartment_number => 'الشقة';
-
-  @override
-  String get district_number => 'المنطقة';
-
-  @override
-  String get neighborhood_number => 'المجاورة';
-
-  @override
-  String get area_name => 'اسم المنطقة';
-
-  @override
-  String get address_details => 'تفاصيل العنوان (الشارع / رقم العمارة / الشقة)';
 
   @override
   String get please_enter_name => 'يرجى إدخال الاسم';
@@ -1535,5 +1486,197 @@ class AppLocalizationsAr extends AppLocalizations {
   String get clear_filter => 'إزالة الفلتر';
 
   @override
-  String get current_location => 'الموقع الحالي';
+  String get choose_location => 'اختر موقعك';
+
+  @override
+  String get use_current_location => 'استخدم موقعي الحالي';
+
+  @override
+  String get use_current_location_hint => 'نحدد أقرب المغاسل لك';
+
+  @override
+  String get current_location => 'موقعي الحالي';
+
+  @override
+  String get my_addresses => 'عناويني';
+
+  @override
+  String get no_saved_addresses => 'لا توجد عناوين محفوظة بعد';
+
+  @override
+  String get add_new_address => 'إضافة عنوان جديد';
+
+  @override
+  String get new_address => 'عنوان جديد';
+
+  @override
+  String get save_and_use_address => 'حفظ واستخدام هذا العنوان';
+
+  @override
+  String get location_permission_denied =>
+      'لم نتمكن من الوصول لموقعك. حاول مرة أخرى أو اختر عنوانك يدوياً.';
+
+  @override
+  String get location_permission_forever =>
+      'إذن الموقع مغلق. فعّله من إعدادات التطبيق أو اختر عنوانك يدوياً.';
+
+  @override
+  String get location_service_disabled =>
+      'خدمة الموقع متوقفة على جهازك. فعّلها أو اختر عنوانك يدوياً.';
+
+  @override
+  String get location_unavailable => 'تعذّر تحديد موقعك الآن، حاول مرة أخرى';
+
+  @override
+  String get open_settings => 'فتح الإعدادات';
+
+  @override
+  String get try_again => 'حاول مرة أخرى';
+
+  @override
+  String get change_location => 'تغيير الموقع';
+
+  @override
+  String get select_area => 'اختر منطقتك';
+
+  @override
+  String get area_madinaty => 'مدينتي';
+
+  @override
+  String get area_shorouk => 'الشروق';
+
+  @override
+  String get area_other => 'منطقة أخرى';
+
+  @override
+  String get group_number => 'رقم المجموعة';
+
+  @override
+  String get building_number => 'رقم العمارة';
+
+  @override
+  String get apartment_number => 'رقم الشقة';
+
+  @override
+  String get district_number => 'رقم المنطقة';
+
+  @override
+  String get neighborhood_number => 'رقم المجاورة';
+
+  @override
+  String get area_name => 'اسم المنطقة';
+
+  @override
+  String get address_details => 'تفاصيل العنوان';
+
+  @override
+  String get address_preview => 'شكل العنوان';
+
+  @override
+  String get register_subtitle => 'أنشئ حسابك لنصلك إلى باب بيتك';
+
+  @override
+  String get personal_information => 'البيانات الشخصية';
+
+  @override
+  String get delivery_address => 'عنوان الاستلام والتسليم';
+
+  @override
+  String get search_idle_title => 'ابحث عن مغسلتك';
+
+  @override
+  String get search_idle_message => 'اكتب اسم المغسلة أو اسم منطقتك';
+
+  @override
+  String get search_results_title => 'نتائج البحث';
+
+  @override
+  String get no_search_results => 'لا توجد نتائج';
+
+  @override
+  String get no_search_results_message => 'جرّب كتابة اسم آخر أو اسم منطقتك';
+
+  @override
+  String get clear_search => 'مسح البحث';
+
+  @override
+  String get recent_searches => 'عمليات البحث الأخيرة';
+
+  @override
+  String get clear_all => 'مسح الكل';
+
+  @override
+  String get ordering_from => 'الطلب من';
+
+  @override
+  String get start_order => 'ابدأ الطلب';
+
+  @override
+  String get services_and_prices => 'الخدمات والأسعار';
+
+  @override
+  String get services_not_listed => 'لم تضف المغسلة خدماتها بعد';
+
+  @override
+  String get working_hours => 'مواعيد العمل';
+
+  @override
+  String get hours_unavailable => 'مواعيد العمل غير متاحة حالياً';
+
+  @override
+  String get closed_day => 'مغلق';
+
+  @override
+  String get location => 'الموقع';
+
+  @override
+  String get location_info_unavailable => 'بيانات الموقع غير متاحة';
+
+  @override
+  String get show_on_map => 'عرض على الخريطة';
+
+  @override
+  String get get_directions => 'الاتجاهات';
+
+  @override
+  String get visit_or_order_hint =>
+      'يمكنك زيارة المغسلة بنفسك أو طلب الاستلام والتوصيل';
+
+  @override
+  String get cannot_open_maps => 'تعذّر فتح تطبيق الخرائط';
+
+  @override
+  String get offers_title => 'العروض';
+
+  @override
+  String get valid_until => 'ساري حتى';
+
+  @override
+  String get offer_kind_discount => 'خصم';
+
+  @override
+  String get offer_kind_package => 'باقة';
+
+  @override
+  String get offer_kind_subscription => 'اشتراك';
+
+  @override
+  String get unit_piece => 'للقطعة';
+
+  @override
+  String get unit_kg => 'للكيلو';
+
+  @override
+  String get unit_sqm => 'للمتر المربع';
+
+  @override
+  String get laundry_closed_notice =>
+      'المغسلة مغلقة الآن. راجع مواعيد العمل أدناه.';
+
+  @override
+  String get laundry_unavailable_notice =>
+      'هذه المغسلة غير متاحة مؤقتاً لاستقبال الطلبات.';
+
+  @override
+  String get laundry_unavailable_order => 'لا يمكن الطلب من هذه المغسلة حالياً';
 }

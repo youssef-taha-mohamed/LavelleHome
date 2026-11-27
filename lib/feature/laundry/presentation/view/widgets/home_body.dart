@@ -1,17 +1,24 @@
 import '../../../../../shared/widgets/shared_widgets.dart';
+import '../../../../location/presentation/cubit/location_cubit.dart';
+import '../../../../location/presentation/widgets/location_sheet.dart';
 import '../../../data/home_model.dart';
-import '../../cubits/home_cubit.dart';
+import '../../cubits/laundry/home_cubit.dart';
+import '../laundry_details_screen.dart';
 import 'banner_widget.dart';
 import 'lundry_card.dart';
 
 class HomeBody extends StatelessWidget {
   final HomeState state;
+  final LocationState location;
 
-  const HomeBody({super.key, required this.state});
+  const HomeBody({super.key, required this.state, required this.location});
 
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<HomeCubit>();
+
+    // لحين تحميل العناوين المحفوظة لا نعرض طلب الموقع
+    if (location.isLoading) return const _HomeSkeleton();
 
     switch (state.status) {
       case LavelleViewStatus.loading:
@@ -25,14 +32,13 @@ class HomeBody extends StatelessWidget {
 
       case LavelleViewStatus.empty:
       case LavelleViewStatus.success:
-        if (state.needsLocation) {
+        if (location.selected == null) {
           return LavelleStateView(
             icon: Icons.location_searching_rounded,
             title: context.l10n.location_prompt_title,
             message: context.l10n.location_prompt_message,
             actionLabel: context.l10n.select_location,
-            // TODO(خطوة 2): افتح showLocationSheet(context)
-            onAction: () => _comingSoon(context, 'Step 2 · Location sheet'),
+            onAction: () => showLocationSheet(context),
           );
         }
         return Column(
@@ -213,10 +219,8 @@ class _NearbySection extends StatelessWidget {
                     icon: Icons.storefront_outlined,
                     title: l10n.no_laundries_nearby,
                     message: l10n.no_laundries_nearby_message,
-                    // TODO(خطوة 2): تغيير الموقع
-                    actionLabel: l10n.select_location,
-                    onAction: () =>
-                        _comingSoon(context, 'Step 2 · Location sheet'),
+                    actionLabel: l10n.change_location,
+                    onAction: () => showLocationSheet(context),
                   )
           else
             Column(
@@ -225,9 +229,11 @@ class _NearbySection extends StatelessWidget {
                 for (final laundry in list)
                   LaundryCard(
                     laundry: laundry,
-                    // TODO(خطوة 4): افتح تفاصيل المغسلة laundry.id
-                    onTap: () =>
-                        _comingSoon(context, 'Step 4 · Laundry details'),
+                    onTap: () => openLaundryDetails(
+                      context,
+                      id: laundry.id,
+                      preview: laundry,
+                    ),
                   ),
               ],
             ),

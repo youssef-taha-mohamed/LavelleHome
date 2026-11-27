@@ -925,9 +925,6 @@ class AppLocalizationsFr extends AppLocalizations {
       'Cette action est définitive et irréversible.';
 
   @override
-  String get personal_information => 'Informations personnelles';
-
-  @override
   String get phone_number => 'Numéro de téléphone';
 
   @override
@@ -1348,9 +1345,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get with_to => 'Avec';
 
   @override
-  String get working_hours => 'Heures de travail';
-
-  @override
   String get working_hours_time => 'Dimanche - Jeudi : 9h00 - 18h00';
 
   @override
@@ -1399,49 +1393,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get splash_welcome => 'Bienvenue chez Lavelle';
-
-  @override
-  String get register_subtitle =>
-      'Créez votre compte et profitez d\'un soin du linge haut de gamme à votre porte';
-
-  @override
-  String get delivery_address => 'Adresse de livraison';
-
-  @override
-  String get select_area => 'Sélectionnez la zone';
-
-  @override
-  String get address_preview => 'Aperçu de l\'adresse';
-
-  @override
-  String get area_madinaty => 'Madinaty';
-
-  @override
-  String get area_shorouk => 'El Shorouk';
-
-  @override
-  String get area_other => 'Autre zone';
-
-  @override
-  String get group_number => 'Groupe';
-
-  @override
-  String get building_number => 'Bâtiment';
-
-  @override
-  String get apartment_number => 'Appartement';
-
-  @override
-  String get district_number => 'District';
-
-  @override
-  String get neighborhood_number => 'Quartier';
-
-  @override
-  String get area_name => 'Nom de la zone';
-
-  @override
-  String get address_details => 'Détails de l\'adresse (Rue / Bâtiment / Appt)';
 
   @override
   String get please_enter_name => 'Veuillez entrer votre nom';
@@ -1558,5 +1509,207 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clear_filter => 'Effacer le filtre';
 
   @override
+  String get choose_location => 'Choisissez votre position';
+
+  @override
+  String get use_current_location => 'Utiliser ma position actuelle';
+
+  @override
+  String get use_current_location_hint =>
+      'Nous trouverons les laveries les plus proches';
+
+  @override
   String get current_location => 'Position actuelle';
+
+  @override
+  String get my_addresses => 'Mes adresses';
+
+  @override
+  String get no_saved_addresses => 'Aucune adresse enregistrée pour le moment';
+
+  @override
+  String get add_new_address => 'Ajouter une nouvelle adresse';
+
+  @override
+  String get new_address => 'Nouvelle adresse';
+
+  @override
+  String get save_and_use_address => 'Enregistrer et utiliser cette adresse';
+
+  @override
+  String get location_permission_denied =>
+      'Impossible d\'accéder à votre position. Réessayez ou choisissez votre adresse manuellement.';
+
+  @override
+  String get location_permission_forever =>
+      'L\'autorisation de localisation est désactivée. Activez-la dans les paramètres ou choisissez votre adresse manuellement.';
+
+  @override
+  String get location_service_disabled =>
+      'Les services de localisation sont désactivés sur votre appareil. Activez-les ou choisissez votre adresse manuellement.';
+
+  @override
+  String get location_unavailable =>
+      'Impossible de détecter votre position pour le moment. Veuillez réessayer';
+
+  @override
+  String get open_settings => 'Ouvrir les paramètres';
+
+  @override
+  String get try_again => 'Réessayer';
+
+  @override
+  String get change_location => 'Changer de position';
+
+  @override
+  String get select_area => 'Sélectionnez la zone';
+
+  @override
+  String get area_madinaty => 'Madinaty';
+
+  @override
+  String get area_shorouk => 'El Shorouk';
+
+  @override
+  String get area_other => 'Autre zone';
+
+  @override
+  String get group_number => 'Groupe';
+
+  @override
+  String get building_number => 'Bâtiment';
+
+  @override
+  String get apartment_number => 'Appartement';
+
+  @override
+  String get district_number => 'District';
+
+  @override
+  String get neighborhood_number => 'Quartier';
+
+  @override
+  String get area_name => 'Nom de la zone';
+
+  @override
+  String get address_details => 'Détails de l\'adresse (Rue / Bâtiment / Appt)';
+
+  @override
+  String get address_preview => 'Aperçu de l\'adresse';
+
+  @override
+  String get register_subtitle =>
+      'Créez votre compte et nous viendrons jusqu\'à votre porte';
+
+  @override
+  String get personal_information => 'Informations personnelles';
+
+  @override
+  String get delivery_address => 'Adresse de livraison';
+
+  @override
+  String get search_idle_title => 'Trouvez votre laverie';
+
+  @override
+  String get search_idle_message =>
+      'Saisissez le nom d\'une laverie ou votre quartier';
+
+  @override
+  String get search_results_title => 'Résultats de recherche';
+
+  @override
+  String get no_search_results => 'Aucun résultat trouvé';
+
+  @override
+  String get no_search_results_message =>
+      'Essayez un autre nom ou votre quartier';
+
+  @override
+  String get clear_search => 'Effacer la recherche';
+
+  @override
+  String get recent_searches => 'Recherches récentes';
+
+  @override
+  String get clear_all => 'Tout effacer';
+
+  @override
+  String get ordering_from => 'Commande chez';
+
+  @override
+  String get start_order => 'Commencer la commande';
+
+  @override
+  String get services_and_prices => 'Services et tarifs';
+
+  @override
+  String get services_not_listed =>
+      'Cette laverie n\'a pas encore ajouté ses services';
+
+  @override
+  String get working_hours => 'Heures de travail';
+
+  @override
+  String get hours_unavailable =>
+      'Les horaires d\'ouverture ne sont pas disponibles pour le moment';
+
+  @override
+  String get closed_day => 'Fermé';
+
+  @override
+  String get location => 'Emplacement';
+
+  @override
+  String get location_info_unavailable =>
+      'Les détails de l\'emplacement ne sont pas disponibles';
+
+  @override
+  String get show_on_map => 'Voir sur la carte';
+
+  @override
+  String get get_directions => 'Itinéraire';
+
+  @override
+  String get visit_or_order_hint =>
+      'Vous pouvez vous rendre à la laverie ou demander la collecte et la livraison';
+
+  @override
+  String get cannot_open_maps =>
+      'Impossible d\'ouvrir l\'application de cartes';
+
+  @override
+  String get offers_title => 'Offres';
+
+  @override
+  String get valid_until => 'Valable jusqu\'au';
+
+  @override
+  String get offer_kind_discount => 'Réduction';
+
+  @override
+  String get offer_kind_package => 'Forfait';
+
+  @override
+  String get offer_kind_subscription => 'Abonnement';
+
+  @override
+  String get unit_piece => 'par pièce';
+
+  @override
+  String get unit_kg => 'par kg';
+
+  @override
+  String get unit_sqm => 'par m²';
+
+  @override
+  String get laundry_closed_notice =>
+      'Cette laverie est actuellement fermée. Consultez les horaires ci-dessous.';
+
+  @override
+  String get laundry_unavailable_notice =>
+      'Cette laverie n\'accepte temporairement pas de commandes.';
+
+  @override
+  String get laundry_unavailable_order =>
+      'Vous ne pouvez pas commander auprès de cette laverie pour le moment';
 }

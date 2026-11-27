@@ -6,7 +6,7 @@ import '../network/response_handler/app/response_handler.dart';
 import '../../feature/address/domain/repository/address_repository.dart';
 import '../../feature/auth/data/data_sources/data_source.dart';
 import '../../feature/auth/data/repositories/authentication.dart';
-import '../../feature/location/cubit/location_cubit.dart';
+import '../../feature/location/presentation/cubit/location_cubit.dart';
 import '../../feature/location/device_location_service.dart';
 import '../../feature/location/geolocator_device_location_service.dart';
 import '../../feature/country/data/datasource/datasource.dart';

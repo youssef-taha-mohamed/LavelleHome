@@ -36,7 +36,7 @@ class LaundryCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _LaundryLogo(name: l.name, url: l.logoUrl),
+          LaundryLogo(name: l.name, url: l.logoUrl),
           const SizedBox(width: 12),
           Expanded(
             child: Column(
@@ -64,13 +64,22 @@ class LaundryCard extends StatelessWidget {
                 ),
 
                 // المسافة + حالة الفتح
-                if (l.distanceKm != null || statusChip != null) ...[
+                if (l.area != null ||
+                    l.distanceKm != null ||
+                    statusChip != null) ...[
                   const SizedBox(height: 6),
                   Wrap(
                     spacing: 10,
                     runSpacing: 6,
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
+                      if (l.area != null)
+                        MainText(
+                          l.area!,
+                          fontSize: 12.5,
+                          fontWeight: FontWeight.w600,
+                          color: t.subText,
+                        ),
                       if (l.distanceKm != null)
                         Row(
                           mainAxisSize: MainAxisSize.min,
@@ -142,27 +151,30 @@ class LaundryCard extends StatelessWidget {
   String _fmt(double v) =>
       v % 1 == 0 ? v.toInt().toString() : v.toStringAsFixed(1);
 
-  /// unknown ← لا نعرض شيئاً (لا نخترع مواعيد)
-  Widget? _statusChip(BuildContext context) {
-    final l10n = context.l10n;
-    switch (laundry.status) {
-      case LaundryStatus.open:
-        return LavelleChip(
-          label: l10n.status_open,
-          tone: LavelleTone.success,
-          icon: Icons.circle,
-        );
-      case LaundryStatus.closed:
-        return LavelleChip(label: l10n.status_closed, tone: LavelleTone.danger);
-      case LaundryStatus.unavailable:
-        return LavelleChip(
-          label: l10n.status_unavailable,
-          tone: LavelleTone.warning,
-          icon: Icons.pause_circle_outline_rounded,
-        );
-      case LaundryStatus.unknown:
-        return null;
-    }
+  Widget? _statusChip(BuildContext context) =>
+      laundryStatusChip(context, laundry.status);
+}
+
+/// unknown ← لا نعرض شيئاً (لا نخترع مواعيد)
+Widget? laundryStatusChip(BuildContext context, LaundryStatus status) {
+  final l10n = context.l10n;
+  switch (status) {
+    case LaundryStatus.open:
+      return LavelleChip(
+        label: l10n.status_open,
+        tone: LavelleTone.success,
+        icon: Icons.circle,
+      );
+    case LaundryStatus.closed:
+      return LavelleChip(label: l10n.status_closed, tone: LavelleTone.danger);
+    case LaundryStatus.unavailable:
+      return LavelleChip(
+        label: l10n.status_unavailable,
+        tone: LavelleTone.warning,
+        icon: Icons.pause_circle_outline_rounded,
+      );
+    case LaundryStatus.unknown:
+      return null;
   }
 }
 
@@ -198,11 +210,11 @@ class _ServiceMiniChip extends StatelessWidget {
   }
 }
 
-class _LaundryLogo extends StatelessWidget {
+class LaundryLogo extends StatelessWidget {
   final String name;
   final String? url;
 
-  const _LaundryLogo({required this.name, this.url});
+  const LaundryLogo({super.key, required this.name, this.url});
 
   @override
   Widget build(BuildContext context) {

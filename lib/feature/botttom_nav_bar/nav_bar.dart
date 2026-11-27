@@ -4,7 +4,7 @@ import '../../core/enums/enums.dart';
 import '../../core/service/deep_link_service.dart';
 import '../../core/utils/styles_link.dart';
 import '../../shared/widgets/shared_widgets.dart';
-import '../home/presentation/view/home_screen.dart';
+import '../laundry/presentation/view/home_screen.dart';
 import 'provider/nav_bar.dart';
 
 class BottomNavBar extends StatefulWidget {

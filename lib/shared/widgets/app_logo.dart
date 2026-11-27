@@ -278,12 +278,18 @@ class LavelleButton extends StatelessWidget {
                   : Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        MainText(
-                          title,
-                          fontSize: 15.5,
-                          fontWeight: FontWeight.w800,
-                          color: fg,
-                          letterSpacing: 0.3,
+                        Flexible(
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: MainText(
+                              title,
+                              fontSize: 15.5,
+                              fontWeight: FontWeight.w800,
+                              color: fg,
+                              letterSpacing: 0.3,
+                              maxLines: 1,
+                            ),
+                          ),
                         ),
                         if (icon != null) ...[
                           const SizedBox(width: 8),

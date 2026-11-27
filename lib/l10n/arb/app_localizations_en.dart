@@ -916,9 +916,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'This action is permanent and cannot be undone.';
 
   @override
-  String get personal_information => 'Personal Information';
-
-  @override
   String get phone_number => 'Phone Number';
 
   @override
@@ -1333,9 +1330,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get with_to => 'With';
 
   @override
-  String get working_hours => 'Working Hours';
-
-  @override
   String get working_hours_time => 'Sunday - Thursday: 9:00 AM - 6:00 PM';
 
   @override
@@ -1384,49 +1378,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get splash_welcome => 'Welcome to Lavelle';
-
-  @override
-  String get register_subtitle =>
-      'Create your account and enjoy premium laundry care at your doorstep';
-
-  @override
-  String get delivery_address => 'Delivery Address';
-
-  @override
-  String get select_area => 'Select Area';
-
-  @override
-  String get address_preview => 'Address Preview';
-
-  @override
-  String get area_madinaty => 'Madinaty';
-
-  @override
-  String get area_shorouk => 'El Shorouk';
-
-  @override
-  String get area_other => 'Other Area';
-
-  @override
-  String get group_number => 'Group';
-
-  @override
-  String get building_number => 'Building';
-
-  @override
-  String get apartment_number => 'Apartment';
-
-  @override
-  String get district_number => 'District';
-
-  @override
-  String get neighborhood_number => 'Neighborhood';
-
-  @override
-  String get area_name => 'Area Name';
-
-  @override
-  String get address_details => 'Address Details (Street / Building / Apt)';
 
   @override
   String get please_enter_name => 'Please enter your name';
@@ -1542,5 +1493,201 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clear_filter => 'Clear filter';
 
   @override
-  String get current_location => 'Current location';
+  String get choose_location => 'Choose your location';
+
+  @override
+  String get use_current_location => 'Use my current location';
+
+  @override
+  String get use_current_location_hint => 'We\'ll find the closest laundries';
+
+  @override
+  String get current_location => 'My current location';
+
+  @override
+  String get my_addresses => 'My addresses';
+
+  @override
+  String get no_saved_addresses => 'No saved addresses yet';
+
+  @override
+  String get add_new_address => 'Add a new address';
+
+  @override
+  String get new_address => 'New address';
+
+  @override
+  String get save_and_use_address => 'Save and use this address';
+
+  @override
+  String get location_permission_denied =>
+      'We couldn\'t access your location. Try again or choose your address manually.';
+
+  @override
+  String get location_permission_forever =>
+      'Location permission is off. Enable it in app settings or choose your address manually.';
+
+  @override
+  String get location_service_disabled =>
+      'Location services are off on your device. Turn them on or choose your address manually.';
+
+  @override
+  String get location_unavailable =>
+      'We couldn\'t detect your location right now. Please try again';
+
+  @override
+  String get open_settings => 'Open settings';
+
+  @override
+  String get try_again => 'Try again';
+
+  @override
+  String get change_location => 'Change location';
+
+  @override
+  String get select_area => 'Select your area';
+
+  @override
+  String get area_madinaty => 'Madinaty';
+
+  @override
+  String get area_shorouk => 'Shorouk';
+
+  @override
+  String get area_other => 'Other area';
+
+  @override
+  String get group_number => 'Group number';
+
+  @override
+  String get building_number => 'Building number';
+
+  @override
+  String get apartment_number => 'Apartment number';
+
+  @override
+  String get district_number => 'District number';
+
+  @override
+  String get neighborhood_number => 'Neighborhood number';
+
+  @override
+  String get area_name => 'Area name';
+
+  @override
+  String get address_details => 'Address details';
+
+  @override
+  String get address_preview => 'Address format';
+
+  @override
+  String get register_subtitle =>
+      'Create your account and we\'ll come to your door';
+
+  @override
+  String get personal_information => 'Personal information';
+
+  @override
+  String get delivery_address => 'Pickup and delivery address';
+
+  @override
+  String get search_idle_title => 'Find your laundry';
+
+  @override
+  String get search_idle_message => 'Type a laundry name or your area';
+
+  @override
+  String get search_results_title => 'Search results';
+
+  @override
+  String get no_search_results => 'No results found';
+
+  @override
+  String get no_search_results_message => 'Try a different name or your area';
+
+  @override
+  String get clear_search => 'Clear search';
+
+  @override
+  String get recent_searches => 'Recent searches';
+
+  @override
+  String get clear_all => 'Clear all';
+
+  @override
+  String get ordering_from => 'Ordering from';
+
+  @override
+  String get start_order => 'Start order';
+
+  @override
+  String get services_and_prices => 'Services & prices';
+
+  @override
+  String get services_not_listed =>
+      'This laundry hasn\'t listed its services yet';
+
+  @override
+  String get working_hours => 'Working hours';
+
+  @override
+  String get hours_unavailable => 'Working hours are not available right now';
+
+  @override
+  String get closed_day => 'Closed';
+
+  @override
+  String get location => 'Location';
+
+  @override
+  String get location_info_unavailable => 'Location details are not available';
+
+  @override
+  String get show_on_map => 'Show on map';
+
+  @override
+  String get get_directions => 'Directions';
+
+  @override
+  String get visit_or_order_hint =>
+      'You can visit the laundry yourself or request pickup and delivery';
+
+  @override
+  String get cannot_open_maps => 'Couldn\'t open the maps app';
+
+  @override
+  String get offers_title => 'Offers';
+
+  @override
+  String get valid_until => 'Valid until';
+
+  @override
+  String get offer_kind_discount => 'Discount';
+
+  @override
+  String get offer_kind_package => 'Package';
+
+  @override
+  String get offer_kind_subscription => 'Subscription';
+
+  @override
+  String get unit_piece => 'per piece';
+
+  @override
+  String get unit_kg => 'per kg';
+
+  @override
+  String get unit_sqm => 'per m²';
+
+  @override
+  String get laundry_closed_notice =>
+      'This laundry is closed right now. See working hours below.';
+
+  @override
+  String get laundry_unavailable_notice =>
+      'This laundry is temporarily not accepting orders.';
+
+  @override
+  String get laundry_unavailable_order =>
+      'You can\'t order from this laundry right now';
 }
