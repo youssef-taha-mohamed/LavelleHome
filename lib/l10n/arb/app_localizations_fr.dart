@@ -1712,4 +1712,29 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get laundry_unavailable_order =>
       'Vous ne pouvez pas commander auprès de cette laverie pour le moment';
+
+  @override
+  String get map_search_this_area => 'Rechercher dans cette zone';
+
+  @override
+  String get map_loading_laundries => 'Chargement des blanchisseries…';
+
+  @override
+  String get map_no_laundries_here => 'Aucune blanchisserie dans cette zone';
+
+  @override
+  String get map_no_laundries_hint =>
+      'Déplacez ou zoomez la carte pour chercher une autre zone';
+
+  @override
+  String get map_load_failed => 'Impossible de charger la carte';
+
+  @override
+  String get map_show_list => 'Afficher la liste';
+
+  @override
+  String get view_laundry => 'Voir la blanchisserie';
+
+  @override
+  String get my_location => 'Ma position';
 }

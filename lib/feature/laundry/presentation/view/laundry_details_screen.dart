@@ -1,6 +1,7 @@
 import '../../../../shared/widgets/shared_widgets.dart';
-import '../../data/home_model.dart';
-import '../../domain/laundry_details_repo.dart';
+import '../../../map/presentation/view/laundry_map_screen.dart';
+import '../../data/module/laundry_model.dart';
+import '../../domain/repository/laundry_details_repo.dart';
 import '../cubits/laundry_details/laundry_details_cubit.dart';
 import 'widgets/external_map.dart';
 import 'widgets/laundry_details_section.dart';
@@ -287,8 +288,11 @@ class _DetailsBody extends StatelessWidget {
               child: LocationSection(
                 address: d.address,
                 hasCoordinates: location != null,
-                // TODO(خطوة 5): افتح الخريطة الكاملة على هذه المغسلة
-                onOpenMap: () => _comingSoon(context, 'Step 5 · Map'),
+                onOpenMap: () => openLaundryMap(
+                  context,
+                  center: location,
+                  selectLaundryId: d.summary.id,
+                ),
                 onDirections: () async {
                   final messenger = ScaffoldMessenger.of(context);
                   final failText = l10n.cannot_open_maps;

@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../shared/widgets/app_logo.dart';
 import '../../../../address/domain/entities/address.dart';
-import '../../../data/home_model.dart';
-import '../../../data/home_repo.dart';
+import '../../../data/module/laundry_model.dart';
+import '../../../domain/repository/laundry_repository.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {

@@ -1,6 +1,6 @@
 import '../../address/domain/entities/address.dart';
-import '../../laundry/data/home_model.dart';
-import '../../laundry/data/home_repo.dart';
+import '../../laundry/data/module/laundry_model.dart';
+import '../../laundry/domain/repository/laundry_repository.dart';
 
 abstract class SearchRepository {
   /// بحث بالاسم أو بالمنطقة فقط (لا فلاتر إضافية). [location] لترتيب/تحديد المغاسل القريبة.

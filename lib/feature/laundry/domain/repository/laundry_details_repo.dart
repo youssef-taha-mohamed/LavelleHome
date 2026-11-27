@@ -1,9 +1,9 @@
 // المسار: lib/feature/laundry/data/laundry_details_repository.dart
 import 'package:flutter/material.dart' show TimeOfDay;
-import '../../address/domain/entities/address.dart' show GeoPoint ;
-import '../data/home_model.dart';
-import '../data/home_repo.dart';
-import '../data/laundry_details.dart';
+import '../../../address/domain/entities/address.dart' show GeoPoint ;
+import '../../data/module/laundry_model.dart';
+import 'laundry_repository.dart';
+import '../../data/laundry_details.dart';
 
 abstract class LaundryDetailsRepository {
   Future<LaundryDetails> fetchDetails(String id);

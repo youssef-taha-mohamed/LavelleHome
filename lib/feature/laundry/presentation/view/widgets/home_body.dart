@@ -1,7 +1,8 @@
 import '../../../../../shared/widgets/shared_widgets.dart';
 import '../../../../location/presentation/cubit/location_cubit.dart';
 import '../../../../location/presentation/widgets/location_sheet.dart';
-import '../../../data/home_model.dart';
+import '../../../../map/presentation/view/laundry_map_screen.dart';
+import '../../../data/module/laundry_model.dart';
 import '../../cubits/laundry/home_cubit.dart';
 import '../laundry_details_screen.dart';
 import 'banner_widget.dart';
@@ -204,8 +205,7 @@ class _NearbySection extends StatelessWidget {
           LavelleSectionHeader(
             title: l10n.nearby_laundries,
             actionLabel: l10n.map_view,
-            // TODO(خطوة 5): Navigator.pushNamed(map)
-            onAction: () => _comingSoon(context, 'Step 5 · Map'),
+            onAction: () => openLaundryMap(context),
           ),
           if (list.isEmpty)
             state.selectedService != null
@@ -241,10 +241,4 @@ class _NearbySection extends StatelessWidget {
       ),
     );
   }
-}
-
-void _comingSoon(BuildContext context, String step) {
-  ScaffoldMessenger.of(
-    context,
-  ).showSnackBar(SnackBar(content: Text('$step — next step')));
 }

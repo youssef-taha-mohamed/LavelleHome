@@ -1,5 +1,5 @@
 import '../../../../../shared/widgets/shared_widgets.dart';
-import '../../../data/home_model.dart';
+import '../../../data/module/laundry_model.dart';
 
 String laundryServiceLabel(BuildContext context, LaundryServiceType type) {
   final l10n = context.l10n;

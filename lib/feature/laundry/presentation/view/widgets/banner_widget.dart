@@ -1,7 +1,7 @@
 import 'dart:async';
 import '../../../../../shared/widgets/shared_widgets.dart';
 import '../../../../botttom_nav_bar/provider/nav_bar.dart';
-import '../../../data/home_repo.dart';
+import '../../../domain/repository/laundry_repository.dart';
 
 class BannerCarousel extends StatefulWidget {
   final List<PromoBanner> banners;

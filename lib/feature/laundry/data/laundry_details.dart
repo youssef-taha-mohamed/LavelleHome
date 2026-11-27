@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' show TimeOfDay;
 import '../../address/domain/entities/address.dart';
-import 'home_model.dart';
+import 'module/laundry_model.dart';
 
 /// وحدة التسعير. القائمة مبدئية (قطعة/كيلو/متر) وتنتظر تأكيد نماذج التسعير الفعلية.
 enum PricingUnit { piece, kg, squareMeter }

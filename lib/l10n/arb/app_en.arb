@@ -588,5 +588,13 @@
   "unit_sqm": "per m²",
   "laundry_closed_notice": "This laundry is closed right now. See working hours below.",
   "laundry_unavailable_notice": "This laundry is temporarily not accepting orders.",
-  "laundry_unavailable_order": "You can't order from this laundry right now"
+  "laundry_unavailable_order": "You can't order from this laundry right now",
+  "map_search_this_area": "Search this area",
+  "map_loading_laundries": "Loading laundries...",
+  "map_no_laundries_here": "No laundries in this area",
+  "map_no_laundries_hint": "Move or zoom the map to search another area",
+  "map_load_failed": "Couldn't load the map",
+  "map_show_list": "Show list",
+  "view_laundry": "View laundry",
+  "my_location": "My location"
 }

@@ -1690,4 +1690,29 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get laundry_unavailable_order =>
       'You can\'t order from this laundry right now';
+
+  @override
+  String get map_search_this_area => 'Search this area';
+
+  @override
+  String get map_loading_laundries => 'Loading laundries...';
+
+  @override
+  String get map_no_laundries_here => 'No laundries in this area';
+
+  @override
+  String get map_no_laundries_hint =>
+      'Move or zoom the map to search another area';
+
+  @override
+  String get map_load_failed => 'Couldn\'t load the map';
+
+  @override
+  String get map_show_list => 'Show list';
+
+  @override
+  String get view_laundry => 'View laundry';
+
+  @override
+  String get my_location => 'My location';
 }

@@ -18,7 +18,7 @@ import '../../feature/auth/presentation/social_login/cubit/social_login_cubit.da
 import '../../feature/auth/presentation/social_register/cubit/social_register_cubit.dart';
 import '../../feature/auth/presentation/social_register/view/social_complete_profile_screen.dart';
 import '../../feature/botttom_nav_bar/nav_bar.dart';
-import '../../feature/laundry/presentation/view/home_screen.dart';
+import '../../feature/laundry/presentation/view/laundry_screen.dart';
 import '../../feature/notifications/domain/entities/parameter/notification_details_arg.dart';
 import '../../feature/notifications/presentation/mobile/notification_details.dart';
 import '../../feature/setting/presentation/cubit/setting_cubit.dart';

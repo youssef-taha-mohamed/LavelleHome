@@ -474,5 +474,13 @@
   "unit_sqm": "للمتر المربع",
   "laundry_closed_notice": "المغسلة مغلقة الآن. راجع مواعيد العمل أدناه.",
   "laundry_unavailable_notice": "هذه المغسلة غير متاحة مؤقتاً لاستقبال الطلبات.",
-  "laundry_unavailable_order": "لا يمكن الطلب من هذه المغسلة حالياً"
+  "laundry_unavailable_order": "لا يمكن الطلب من هذه المغسلة حالياً",
+  "map_search_this_area": "ابحث في هذه المنطقة",
+  "map_loading_laundries": "جاري تحميل المغاسل...",
+  "map_no_laundries_here": "لا توجد مغاسل في هذه المنطقة",
+  "map_no_laundries_hint": "حرّك الخريطة أو كبّرها للبحث في منطقة أخرى",
+  "map_load_failed": "تعذّر تحميل الخريطة",
+  "map_show_list": "عرض القائمة",
+  "view_laundry": "عرض المغسلة",
+  "my_location": "موقعي"
 }

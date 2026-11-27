@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 import 'package:app_links/app_links.dart';
-import '../../feature/laundry/presentation/view/home_screen.dart';
+import '../../feature/laundry/presentation/view/laundry_screen.dart';
 import '../authentication/provider.dart';
 import '../service/navigation_service.dart';
 import '../../feature/auth/presentation/login/view/login.dart';

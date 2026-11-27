@@ -3279,6 +3279,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You can\'t order from this laundry right now'**
   String get laundry_unavailable_order;
+
+  /// No description provided for @map_search_this_area.
+  ///
+  /// In en, this message translates to:
+  /// **'Search this area'**
+  String get map_search_this_area;
+
+  /// No description provided for @map_loading_laundries.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading laundries...'**
+  String get map_loading_laundries;
+
+  /// No description provided for @map_no_laundries_here.
+  ///
+  /// In en, this message translates to:
+  /// **'No laundries in this area'**
+  String get map_no_laundries_here;
+
+  /// No description provided for @map_no_laundries_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Move or zoom the map to search another area'**
+  String get map_no_laundries_hint;
+
+  /// No description provided for @map_load_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load the map'**
+  String get map_load_failed;
+
+  /// No description provided for @map_show_list.
+  ///
+  /// In en, this message translates to:
+  /// **'Show list'**
+  String get map_show_list;
+
+  /// No description provided for @view_laundry.
+  ///
+  /// In en, this message translates to:
+  /// **'View laundry'**
+  String get view_laundry;
+
+  /// No description provided for @my_location.
+  ///
+  /// In en, this message translates to:
+  /// **'My location'**
+  String get my_location;
 }
 
 class _AppLocalizationsDelegate

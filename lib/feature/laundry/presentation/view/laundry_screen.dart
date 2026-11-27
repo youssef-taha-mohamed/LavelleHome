@@ -2,12 +2,13 @@ import '../../../../shared/widgets/shared_widgets.dart';
 import '../../../address/presentation/widgets/address_labels.dart';
 import '../../../location/presentation/cubit/location_cubit.dart';
 import '../../../location/presentation/widgets/location_sheet.dart';
+import '../../../map/presentation/view/laundry_map_screen.dart';
 import '../../../notifications/presentation/view/notification_screen.dart';
 import '../../../search/presentation/view/search_screen.dart';
-import '../../data/home_repo.dart';
+import '../../domain/repository/laundry_repository.dart';
 import '../cubits/laundry/home_cubit.dart';
 import 'widgets/home_body.dart';
-import 'widgets/home_header.dart';
+import 'widgets/laundry_header.dart';
 
 class HomeScreenParameter {
   final String id;
@@ -37,13 +38,6 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-/// أماكن ستُربط في الخطوات القادمة (مكتوب رقم الخطوة بجوار كل واحد)
-void _comingSoon(BuildContext context, String step) {
-  ScaffoldMessenger.of(
-    context,
-  ).showSnackBar(SnackBar(content: Text('$step — next step')));
 }
 
 class _HomeView extends StatelessWidget {
@@ -117,9 +111,7 @@ class _HomeView extends StatelessWidget {
                                   builder: (_) => const LaundrySearchScreen(),
                                 ),
                               ),
-                              // TODO(خطوة 5): Navigator.pushNamed(map)
-                              onMapTap: () =>
-                                  _comingSoon(context, 'Step 5 · Map'),
+                              onMapTap: () => openLaundryMap(context),
                             ),
                           ),
                         ),

@@ -1,8 +1,8 @@
 import '../../../../../shared/widgets/shared_widgets.dart';
-import '../../../data/home_model.dart';
-import '../../../data/home_repo.dart';
+import '../../../data/module/laundry_model.dart';
+import '../../../domain/repository/laundry_repository.dart';
 import '../../../data/laundry_details.dart';
-import '../../../domain/laundry_details_repo.dart';
+import '../../../domain/repository/laundry_details_repo.dart';
 
 part 'laundry_details_state.dart';
 

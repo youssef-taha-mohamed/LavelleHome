@@ -1679,4 +1679,29 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get laundry_unavailable_order => 'لا يمكن الطلب من هذه المغسلة حالياً';
+
+  @override
+  String get map_search_this_area => 'ابحث في هذه المنطقة';
+
+  @override
+  String get map_loading_laundries => 'جاري تحميل المغاسل...';
+
+  @override
+  String get map_no_laundries_here => 'لا توجد مغاسل في هذه المنطقة';
+
+  @override
+  String get map_no_laundries_hint =>
+      'حرّك الخريطة أو كبّرها للبحث في منطقة أخرى';
+
+  @override
+  String get map_load_failed => 'تعذّر تحميل الخريطة';
+
+  @override
+  String get map_show_list => 'عرض القائمة';
+
+  @override
+  String get view_laundry => 'عرض المغسلة';
+
+  @override
+  String get my_location => 'موقعي';
 }

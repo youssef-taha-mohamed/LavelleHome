@@ -588,5 +588,13 @@
   "unit_sqm": "par m²",
   "laundry_closed_notice": "Cette laverie est actuellement fermée. Consultez les horaires ci-dessous.",
   "laundry_unavailable_notice": "Cette laverie n'accepte temporairement pas de commandes.",
-  "laundry_unavailable_order": "Vous ne pouvez pas commander auprès de cette laverie pour le moment"
+  "laundry_unavailable_order": "Vous ne pouvez pas commander auprès de cette laverie pour le moment",
+  "map_search_this_area": "Rechercher dans cette zone",
+  "map_loading_laundries": "Chargement des blanchisseries…",
+  "map_no_laundries_here": "Aucune blanchisserie dans cette zone",
+  "map_no_laundries_hint": "Déplacez ou zoomez la carte pour chercher une autre zone",
+  "map_load_failed": "Impossible de charger la carte",
+  "map_show_list": "Afficher la liste",
+  "view_laundry": "Voir la blanchisserie",
+  "my_location": "Ma position"
 }

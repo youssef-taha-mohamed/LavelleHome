@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../../../shared/widgets/shared_widgets.dart';
-import '../../../data/home_model.dart';
+import '../../../data/module/laundry_model.dart';
 import '../../../data/laundry_details.dart';
 import 'lundry_card.dart';
 

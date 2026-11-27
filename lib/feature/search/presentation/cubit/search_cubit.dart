@@ -1,8 +1,8 @@
 import 'dart:async';
 import '../../../../shared/widgets/shared_widgets.dart';
 import '../../../address/domain/entities/address.dart';
-import '../../../laundry/data/home_model.dart';
-import '../../../laundry/data/home_repo.dart';
+import '../../../laundry/data/module/laundry_model.dart';
+import '../../../laundry/domain/repository/laundry_repository.dart';
 import '../../domain/search_repository.dart';
 part 'search_state.dart';
 
