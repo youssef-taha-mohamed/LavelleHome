@@ -5,5 +5,3 @@
 /// false ← تظهر "الإجمالي" بدون ملاحظة.
 /// قرار بيزنس معلّق، يُضبط في مكان واحد هنا.
 const bool kPriceIsEstimate = true;
-/// رسوم التوصيل. null = غير محددة بعد (لا تظهر في الملخص). قرار بيزنس معلّق.
-const double? kDeliveryFee = null;

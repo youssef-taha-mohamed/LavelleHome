@@ -6,13 +6,15 @@ part of 'order_draft_cubit.dart';
 class OrderDraftState {
   final String? laundryId;
   final String? laundryName;
-  final OrderKind? kind; // نوع الطلب: ملابس أو سجاد (واحد فقط لكل طلب)
+
+  /// رسوم التوصيل من بيانات المغسلة (null = غير محددة)
+  final double? deliveryFee;
   final Map<String, OrderLine> lines;
 
   const OrderDraftState({
     this.laundryId,
     this.laundryName,
-    this.kind,
+    this.deliveryFee,
     this.lines = const {},
   });
 
@@ -22,18 +24,14 @@ class OrderDraftState {
 
   double get subtotal => lines.values.fold(0, (sum, l) => sum + l.total);
 
-  /// الخصم غير محسوب بعد (لا قواعد له)، ورسوم التوصيل من order_config
+  /// أنواع الطلب الموجودة فعلاً (ملابس و/أو سجاد). تحدد وسيلة الاستلام المناسبة.
+  List<OrderKind> get kinds => OrderKind.values
+      .where((k) => lines.values.any((l) => l.kind == k))
+      .toList();
+
+  /// الخصم غير محسوب بعد (لا قواعد له)
   OrderPricing get pricing =>
-      OrderPricing(subtotal: subtotal, deliveryFee: kDeliveryFee);
+      OrderPricing(subtotal: subtotal, deliveryFee: deliveryFee);
 
   double quantityOf(String key) => lines[key]?.quantity ?? 0;
-
-  OrderDraftState copyWith({OrderKind? kind, Map<String, OrderLine>? lines}) {
-    return OrderDraftState(
-      laundryId: laundryId,
-      laundryName: laundryName,
-      kind: kind ?? this.kind,
-      lines: lines ?? this.lines,
-    );
-  }
 }

@@ -5,7 +5,8 @@ import 'module/laundry_model.dart';
 /// وحدة التسعير. القائمة مبدئية (قطعة/كيلو/متر) وتنتظر تأكيد نماذج التسعير الفعلية.
 enum PricingUnit { piece, kg, squareMeter }
 
-/// نوع الطلب. الطلب الواحد له نوع واحد، لأنه يحدد وسيلة المواصلة المناسبة لاستلامه.
+/// نوع الخدمة بالنسبة للمواصلة: ملابس أو سجاد (التنظيف الجاف يندرج تحت الملابس).
+/// الطلب قد يضم النوعين معاً، والمغسلة تحدد وسيلة الاستلام المناسبة من الأنواع الموجودة فيه.
 enum OrderKind { clothes, carpet }
 
 /// طريقة إنهاء الكي للقطعة: على علّاقة أو مطوية
@@ -16,14 +17,15 @@ class PriceItem {
   final double price;
   final PricingUnit unit;
 
-  /// قطع معروف أنها تعليق بطبيعتها (جاكيت، بالطو، بنطلون): لا يُسأل العميل عنها
-  final GarmentFinish? fixedFinish;
+  /// الاختيار الافتراضي للقطعة (مثلاً الجاكيت والبالطو والبنطلون: تعليق).
+  /// يظهر كافتراضي ويستطيع العميل تغييره. null = لا افتراضي.
+  final GarmentFinish? defaultFinish;
 
   const PriceItem({
     required this.name,
     required this.price,
     this.unit = PricingUnit.piece,
-    this.fixedFinish,
+    this.defaultFinish,
   });
 }
 
@@ -35,10 +37,11 @@ class ServiceGroup {
   final LaundryServiceType? type;
   final List<PriceItem> items;
 
-  /// نوع الطلب الذي تنتمي له الخدمة (ملابس أو سجاد)
+  /// يحدد نوع الطلب الذي تنتمي له هذه الخدمة (ملابس أو سجاد)
   final OrderKind kind;
 
   /// الخدمة تتضمن كياً، فيختار العميل لكل قطعة: تعليق أم تطبيق
+  /// (الغسيل بالقطعة والكي والتنظيف الجاف كلها تُكوى، فيها اختيار)
   final bool hasFinishChoice;
 
   const ServiceGroup({
@@ -92,6 +95,9 @@ class LaundryDetails {
   final List<WorkingDay>? workingHours;
   final List<LaundryOffer> offers;
 
+  /// رسوم التوصيل لهذه المغسلة (من الـ backend، قابلة للتغيير). null = غير محددة.
+  final double? deliveryFee;
+
   const LaundryDetails({
     required this.summary,
     this.description,
@@ -100,5 +106,6 @@ class LaundryDetails {
     this.serviceGroups = const [],
     this.workingHours,
     this.offers = const [],
+    this.deliveryFee,
   });
 }

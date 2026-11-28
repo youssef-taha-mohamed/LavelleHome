@@ -1859,4 +1859,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get go_back => 'Retour';
+
+  @override
+  String get finish_default => 'Par défaut';
 }

@@ -4,7 +4,6 @@ import '../../../address/domain/entities/address.dart' show GeoPoint;
 import '../../data/module/laundry_model.dart';
 import 'laundry_repository.dart';
 import '../../data/laundry_details.dart';
-
 abstract class LaundryDetailsRepository {
   Future<LaundryDetails> fetchDetails(String id);
 }
@@ -59,54 +58,48 @@ class MockLaundryDetailsRepository implements LaundryDetailsRepository {
     ];
   }
 
-  // laundry_details_repository.dart: استبدل من `static const _washing` حتى نهاية `_carpet` بالآتي
-
+  // الغسيل بالقطعة: سعر كل قطعة يشمل الغسيل والكي (فيه اختيار تعليق/تطبيق)
   static const _washing = ServiceGroup(
     id: 'washing',
-    name: 'غسيل',
-    type: LaundryServiceType.washing,
-    hasFinishChoice: true,
-    items: [
-      PriceItem(name: 'قميص', price: 12),
-      PriceItem(name: 'بنطلون', price: 14, fixedFinish: GarmentFinish.hanging),
-      PriceItem(name: 'جاكيت', price: 25, fixedFinish: GarmentFinish.hanging),
-      PriceItem(name: 'غسيل بالكيلو', price: 30, unit: PricingUnit.kg),
-    ],
-  );
-
-  static const _ironing = ServiceGroup(
-    id: 'ironing',
-    name: 'كي',
-    type: LaundryServiceType.ironing,
-    hasFinishChoice: true,
-    items: [
-      PriceItem(name: 'قميص', price: 8),
-      PriceItem(name: 'جلابية', price: 12),
-      PriceItem(name: 'بنطلون', price: 8, fixedFinish: GarmentFinish.hanging),
-      PriceItem(name: 'جاكيت', price: 12, fixedFinish: GarmentFinish.hanging),
-      PriceItem(name: 'بالطو', price: 15, fixedFinish: GarmentFinish.hanging),
-    ],
-  );
-
-  static const _washIron = ServiceGroup(
-    id: 'wash_iron',
     name: 'غسيل وكي',
     type: LaundryServiceType.washing,
     hasFinishChoice: true,
     items: [
       PriceItem(name: 'قميص', price: 18),
-      PriceItem(name: 'بنطلون', price: 20, fixedFinish: GarmentFinish.hanging),
+      PriceItem(name: 'جلابية', price: 16),
+      PriceItem(
+        name: 'بنطلون',
+        price: 20,
+        defaultFinish: GarmentFinish.hanging,
+      ),
+      PriceItem(name: 'جاكيت', price: 25, defaultFinish: GarmentFinish.hanging),
     ],
   );
 
+  static const _ironing = ServiceGroup(
+    id: 'ironing',
+    name: 'كي فقط',
+    type: LaundryServiceType.ironing,
+    hasFinishChoice: true,
+    items: [
+      PriceItem(name: 'قميص', price: 8),
+      PriceItem(name: 'جلابية', price: 12),
+      PriceItem(name: 'بنطلون', price: 8, defaultFinish: GarmentFinish.hanging),
+      PriceItem(name: 'جاكيت', price: 12, defaultFinish: GarmentFinish.hanging),
+      PriceItem(name: 'بالطو', price: 15, defaultFinish: GarmentFinish.hanging),
+    ],
+  );
+
+  // أي تنظيف جاف يُكوى تلقائياً، فيه اختيار تعليق/تطبيق
   static const _dry = ServiceGroup(
     id: 'dry',
     name: 'تنظيف جاف',
     type: LaundryServiceType.dryCleaning,
+    hasFinishChoice: true,
     items: [
-      PriceItem(name: 'بدلة', price: 90),
-      PriceItem(name: 'فستان', price: 80),
-      PriceItem(name: 'معطف', price: 100),
+      PriceItem(name: 'بدلة', price: 90, defaultFinish: GarmentFinish.hanging),
+      PriceItem(name: 'فستان', price: 80, defaultFinish: GarmentFinish.hanging),
+      PriceItem(name: 'معطف', price: 100, defaultFinish: GarmentFinish.hanging),
     ],
   );
 
@@ -132,11 +125,12 @@ class MockLaundryDetailsRepository implements LaundryDetailsRepository {
       case 'l1':
         return LaundryDetails(
           summary: s,
+          deliveryFee: 30,
           description:
               'مغسلة متكاملة للغسيل والكي والتنظيف الجاف بأحدث الماكينات.',
           address: 'مدينتي، مجموعة 36',
           location: const GeoPoint(30.1085, 31.6385),
-          serviceGroups: const [_washing, _ironing, _washIron, _dry],
+          serviceGroups: const [_washing, _ironing, _dry],
           workingHours: _week(nine, tenPm, fridayOpens: twoPm),
           offers: [
             LaundryOffer(
@@ -156,6 +150,7 @@ class MockLaundryDetailsRepository implements LaundryDetailsRepository {
       case 'l2':
         return LaundryDetails(
           summary: s,
+          deliveryFee: 30,
           address: 'مدينتي، مجموعة 12',
           location: const GeoPoint(30.1102, 31.6411),
           serviceGroups: const [_washing, _ironing],
@@ -164,6 +159,7 @@ class MockLaundryDetailsRepository implements LaundryDetailsRepository {
       case 'l3':
         return LaundryDetails(
           summary: s,
+          deliveryFee: 30,
           description: 'متخصصون في تنظيف السجاد والموكيت.',
           address: 'الشروق، المنطقة الأولى',
           location: const GeoPoint(30.1236, 31.6070),
@@ -181,6 +177,7 @@ class MockLaundryDetailsRepository implements LaundryDetailsRepository {
       case 'l4':
         return LaundryDetails(
           summary: s,
+          deliveryFee: 30,
           address: 'الشروق، المجاورة الأولى',
           location: const GeoPoint(30.1201, 31.6123),
           serviceGroups: const [_washing, _ironing, _dry, _carpet],

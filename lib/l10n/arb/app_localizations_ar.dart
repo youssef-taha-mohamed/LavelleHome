@@ -1821,4 +1821,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get go_back => 'رجوع';
+
+  @override
+  String get finish_default => 'افتراضي';
 }

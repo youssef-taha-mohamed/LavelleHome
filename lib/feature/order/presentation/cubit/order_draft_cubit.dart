@@ -1,6 +1,5 @@
 import '../../../../shared/widgets/shared_widgets.dart';
 import '../../../laundry/data/laundry_details.dart';
-import '../../domain/order_config.dart';
 import '../../domain/order_line.dart';
 import '../../domain/order_pricing.dart';
 
@@ -15,20 +14,20 @@ class OrderDraftCubit extends Cubit<OrderDraftState> {
     GarmentFinish? finish,
   ]) => '${group.id}|${item.name}|${finish?.name ?? ''}';
 
-  /// بدء طلب من مغسلة. لو مغسلة مختلفة عن السابقة تُمسح المسودة.
-  void start({required String laundryId, required String laundryName}) {
-    if (state.laundryId == laundryId) return;
-    emit(OrderDraftState(laundryId: laundryId, laundryName: laundryName));
-  }
-
-  /// يحدد نوع الطلب. تغييره يمسح العناصر (الطلب الواحد له نوع واحد).
-  void setKind(OrderKind kind) {
-    if (state.kind == kind) return;
+  /// بدء طلب من مغسلة. لو مغسلة مختلفة عن السابقة تُمسح المسودة،
+  /// ولو نفسها نحتفظ بالأسطر ونحدّث رسوم التوصيل فقط.
+  void start({
+    required String laundryId,
+    required String laundryName,
+    double? deliveryFee,
+  }) {
+    final same = state.laundryId == laundryId;
     emit(
       OrderDraftState(
-        laundryId: state.laundryId,
-        laundryName: state.laundryName,
-        kind: kind,
+        laundryId: laundryId,
+        laundryName: laundryName,
+        deliveryFee: deliveryFee,
+        lines: same ? state.lines : const {},
       ),
     );
   }
@@ -49,6 +48,7 @@ class OrderDraftCubit extends Cubit<OrderDraftState> {
         key: key,
         groupId: group.id,
         groupName: group.name,
+        kind: group.kind,
         itemName: item.name,
         unit: item.unit,
         unitPrice: item.price,
@@ -57,7 +57,14 @@ class OrderDraftCubit extends Cubit<OrderDraftState> {
       );
     }
 
-    emit(state.copyWith(lines: next));
+    emit(
+      OrderDraftState(
+        laundryId: state.laundryId,
+        laundryName: state.laundryName,
+        deliveryFee: state.deliveryFee,
+        lines: next,
+      ),
+    );
   }
 
   void increment(ServiceGroup group, PriceItem item, {GarmentFinish? finish}) =>

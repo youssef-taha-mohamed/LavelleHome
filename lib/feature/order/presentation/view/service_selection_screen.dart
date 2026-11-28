@@ -14,11 +14,11 @@ Future<void> openServiceSelection(
   BuildContext context, {
   required LaundryDetails details,
 }) {
-  final draft = context.read<OrderDraftCubit>()
-    ..start(laundryId: details.summary.id, laundryName: details.summary.name);
-  // لو المغسلة تقدّم نوعاً واحداً فقط (ملابس أو سجاد) نختاره تلقائياً
-  final kinds = details.serviceGroups.map((g) => g.kind).toSet();
-  if (kinds.length == 1) draft.setKind(kinds.first);
+  context.read<OrderDraftCubit>().start(
+    laundryId: details.summary.id,
+    laundryName: details.summary.name,
+    deliveryFee: details.deliveryFee,
+  );
   return Navigator.push(
     context,
     MaterialPageRoute(builder: (_) => ServiceSelectionScreen(details: details)),
@@ -87,8 +87,7 @@ class ServiceSelectionScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                     ],
-                    _OrderKindSelector(groups: groups),
-                    _GroupsList(groups: groups),
+                    _ServiceSections(groups: groups),
                   ],
                 ],
               ),
@@ -214,12 +213,13 @@ class _ItemRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final t = LavelleTheme.of(context);
     final l10n = context.l10n;
-    final cubit = context.read<OrderDraftCubit>();
-    final key = OrderDraftCubit.keyOf(group, item);
     // قطع الخدمات التي فيها كي: تعليق أو تطبيق لكل قطعة
     if (group.hasFinishChoice && item.unit == PricingUnit.piece) {
       return _FinishItemRow(group: group, item: item);
     }
+
+    final cubit = context.read<OrderDraftCubit>();
+    final key = OrderDraftCubit.keyOf(group, item);
     final qty = context.select<OrderDraftCubit, double>(
       (c) => c.state.quantityOf(key),
     );
@@ -486,230 +486,57 @@ class _SummaryBar extends StatelessWidget {
   }
 }
 
-// service_selection_screen.dart: الصق الآتي في آخر الملف كما هو
-
 // ═════════════════════════════════════════════════════════════
-// نوع الطلب (ملابس / سجاد)
+// الأقسام: ملابس / سجاد (الطلب قد يضم النوعين معاً)
 // ═════════════════════════════════════════════════════════════
 
-/// طلب واحد = نوع واحد، لأن النوع يحدد وسيلة الاستلام المناسبة.
-/// لا يظهر إن كانت المغسلة تقدّم نوعاً واحداً (يُختار تلقائياً).
-class _OrderKindSelector extends StatelessWidget {
+/// يعرض كل خدمات المغسلة. لو فيها ملابس وسجاد معاً، تُقسَّم تحت عنوانين،
+/// لأن النوع يحدد وسيلة الاستلام المناسبة. ويمكن للعميل اختيار النوعين في طلب واحد.
+class _ServiceSections extends StatelessWidget {
   final List<ServiceGroup> groups;
 
-  const _OrderKindSelector({required this.groups});
-
-  Future<void> _choose(BuildContext context, OrderKind kind) async {
-    final cubit = context.read<OrderDraftCubit>();
-    final current = cubit.state.kind;
-    if (current == kind) return;
-
-    // تغيير النوع مع وجود عناصر يمسحها، فنسأل أولاً
-    if (current != null && !cubit.state.isEmpty) {
-      final ok = await showLavelleSheet<bool>(
-        context,
-        title: context.l10n.change_order_kind_title,
-        builder: (ctx) => const _ConfirmKindChange(),
-      );
-      if (ok != true) return;
-    }
-    cubit.setKind(kind);
-  }
+  const _ServiceSections({required this.groups});
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
-    final t = LavelleTheme.of(context);
     final kinds = OrderKind.values
         .where((k) => groups.any((g) => g.kind == k))
         .toList();
-    if (kinds.length < 2) return const SizedBox.shrink();
-
-    final selected = context.select<OrderDraftCubit, OrderKind?>(
-      (c) => c.state.kind,
-    );
-
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        spacing: 10,
-        children: [
-          LavelleSectionHeader(title: l10n.order_kind_title),
-          MainText(l10n.order_kind_note, fontSize: 12.5, color: t.subText),
-          Row(
-            spacing: 12,
-            children: [
-              for (final k in kinds)
-                Expanded(
-                  child: _KindCard(
-                    kind: k,
-                    services: groups
-                        .where((g) => g.kind == k)
-                        .map((g) => g.name)
-                        .join('، '),
-                    selected: selected == k,
-                    onTap: () => _choose(context, k),
-                  ),
-                ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _KindCard extends StatelessWidget {
-  final OrderKind kind;
-  final String services;
-  final bool selected;
-  final VoidCallback onTap;
-
-  const _KindCard({
-    required this.kind,
-    required this.services,
-    required this.selected,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final t = LavelleTheme.of(context);
-    final radius = BorderRadius.circular(20);
-    final fg = selected ? Colors.white : t.text;
-
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 220),
-      curve: Curves.easeOut,
-      decoration: BoxDecoration(
-        borderRadius: radius,
-        gradient: selected ? LavelleGradients.primary : null,
-        color: selected ? null : t.card,
-        border: Border.all(color: selected ? Colors.transparent : t.border),
-        boxShadow: selected
-            ? [
-                BoxShadow(
-                  color: t.accent.withValues(alpha: 0.3),
-                  blurRadius: 14,
-                  offset: const Offset(0, 6),
-                ),
-              ]
-            : [],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          borderRadius: radius,
-          onTap: onTap,
-          child: Padding(
-            padding: const EdgeInsets.all(14),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 8,
-              children: [
-                Icon(
-                  orderKindIcon(kind),
-                  size: 30,
-                  color: selected ? Colors.white : t.accent,
-                ),
-                MainText(
-                  orderKindLabel(context, kind),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w800,
-                  color: fg,
-                ),
-                MainText(
-                  services,
-                  fontSize: 11.5,
-                  color: fg.withValues(alpha: 0.8),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _ConfirmKindChange extends StatelessWidget {
-  const _ConfirmKindChange();
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = context.l10n;
-    final t = LavelleTheme.of(context);
-
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(22, 8, 22, 24),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          MainText(
-            l10n.change_order_kind_message,
-            fontSize: 14,
-            color: t.subText,
-          ),
-          const SizedBox(height: 20),
-          LavelleButton(
-            title: l10n.change_confirm,
-            onTap: () => Navigator.pop(context, true),
-          ),
-          const SizedBox(height: 8),
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: MainText(
-              l10n.cancel,
-              fontSize: 13.5,
-              fontWeight: FontWeight.w600,
-              color: t.subText,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// مجموعات الخدمات الخاصة بنوع الطلب المختار فقط
-class _GroupsList extends StatelessWidget {
-  final List<ServiceGroup> groups;
-
-  const _GroupsList({required this.groups});
-
-  @override
-  Widget build(BuildContext context) {
-    final t = LavelleTheme.of(context);
-    final kind = context.select<OrderDraftCubit, OrderKind?>(
-      (c) => c.state.kind,
-    );
-
-    if (kind == null) {
-      return LavelleCard(
-        child: Row(
-          spacing: 12,
-          children: [
-            Icon(Icons.touch_app_outlined, color: t.accent),
-            Expanded(
-              child: MainText(
-                context.l10n.choose_order_kind_first,
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-                color: t.text,
-              ),
-            ),
-          ],
-        ),
-      );
-    }
+    final showHeaders = kinds.length > 1;
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       spacing: 14,
       children: [
-        for (final g in groups)
-          if (g.kind == kind) _GroupCard(group: g),
+        for (final k in kinds) ...[
+          if (showHeaders) _KindHeader(kind: k),
+          for (final g in groups)
+            if (g.kind == k) _GroupCard(group: g),
+        ],
+      ],
+    );
+  }
+}
+
+class _KindHeader extends StatelessWidget {
+  final OrderKind kind;
+
+  const _KindHeader({required this.kind});
+
+  @override
+  Widget build(BuildContext context) {
+    final t = LavelleTheme.of(context);
+
+    return Row(
+      spacing: 10,
+      children: [
+        LavelleIconBadge(icon: orderKindIcon(kind), size: 34),
+        MainText(
+          orderKindLabel(context, kind),
+          fontSize: 17,
+          fontWeight: FontWeight.w800,
+          color: t.accent,
+        ),
       ],
     );
   }
@@ -729,7 +556,12 @@ class _FinishItemRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final t = LavelleTheme.of(context);
     final l10n = context.l10n;
-    final fixed = item.fixedFinish;
+    final def = item.defaultFinish;
+
+    // الافتراضي أولاً، ويستطيع العميل استخدام الآخر
+    final order = def == GarmentFinish.folded
+        ? const [GarmentFinish.folded, GarmentFinish.hanging]
+        : const [GarmentFinish.hanging, GarmentFinish.folded];
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
@@ -754,29 +586,20 @@ class _FinishItemRow extends StatelessWidget {
               ),
             ],
           ),
-          // قطعة معروفة بأنها تعليق: عدّاد واحد بدون اختيار
-          if (fixed != null)
-            _FinishCounter(group: group, item: item, finish: fixed, wide: true)
-          else
-            Row(
-              spacing: 10,
-              children: [
+          Row(
+            spacing: 10,
+            children: [
+              for (final f in order)
                 Expanded(
                   child: _FinishCounter(
                     group: group,
                     item: item,
-                    finish: GarmentFinish.hanging,
+                    finish: f,
+                    isDefault: f == def,
                   ),
                 ),
-                Expanded(
-                  child: _FinishCounter(
-                    group: group,
-                    item: item,
-                    finish: GarmentFinish.folded,
-                  ),
-                ),
-              ],
-            ),
+            ],
+          ),
         ],
       ),
     );
@@ -787,13 +610,13 @@ class _FinishCounter extends StatelessWidget {
   final ServiceGroup group;
   final PriceItem item;
   final GarmentFinish finish;
-  final bool wide;
+  final bool isDefault;
 
   const _FinishCounter({
     required this.group,
     required this.item,
     required this.finish,
-    this.wide = false,
+    required this.isDefault,
   });
 
   @override
@@ -806,28 +629,6 @@ class _FinishCounter extends StatelessWidget {
     );
     final active = qty > 0;
 
-    final label = Row(
-      mainAxisSize: MainAxisSize.min,
-      spacing: 6,
-      children: [
-        Icon(garmentFinishIcon(finish), size: 18, color: t.accent),
-        MainText(
-          garmentFinishLabel(context, finish),
-          fontSize: 13,
-          fontWeight: FontWeight.w700,
-          color: t.text,
-        ),
-      ],
-    );
-
-    final control = qty == 0
-        ? _AddButton(onTap: () => cubit.increment(group, item, finish: finish))
-        : _Stepper(
-            quantity: qty.round(),
-            onIncrement: () => cubit.increment(group, item, finish: finish),
-            onDecrement: () => cubit.decrement(group, item, finish: finish),
-          );
-
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
@@ -838,18 +639,46 @@ class _FinishCounter extends StatelessWidget {
           color: t.accent.withValues(alpha: active ? 0.5 : 0.18),
         ),
       ),
-      child: wide
-          ? Row(children: [label, const Spacer(), control])
-          : Column(
-              spacing: 8,
+      child: Column(
+        spacing: 8,
+        children: [
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: Wrap(
+              spacing: 6,
+              runSpacing: 4,
+              crossAxisAlignment: WrapCrossAlignment.center,
               children: [
-                Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: label,
+                Icon(garmentFinishIcon(finish), size: 18, color: t.accent),
+                MainText(
+                  garmentFinishLabel(context, finish),
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                  color: t.text,
                 ),
-                control,
+                if (isDefault)
+                  MainText(
+                    context.l10n.finish_default,
+                    fontSize: 10.5,
+                    fontWeight: FontWeight.w600,
+                    color: t.subText,
+                  ),
               ],
             ),
+          ),
+          qty == 0
+              ? _AddButton(
+                  onTap: () => cubit.increment(group, item, finish: finish),
+                )
+              : _Stepper(
+                  quantity: qty.round(),
+                  onIncrement: () =>
+                      cubit.increment(group, item, finish: finish),
+                  onDecrement: () =>
+                      cubit.decrement(group, item, finish: finish),
+                ),
+        ],
+      ),
     );
   }
 }

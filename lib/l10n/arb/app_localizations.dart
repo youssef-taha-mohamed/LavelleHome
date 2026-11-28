@@ -3555,6 +3555,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Go back'**
   String get go_back;
+
+  /// No description provided for @finish_default.
+  ///
+  /// In en, this message translates to:
+  /// **'Default'**
+  String get finish_default;
 }
 
 class _AppLocalizationsDelegate
