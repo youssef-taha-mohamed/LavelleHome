@@ -3561,6 +3561,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Default'**
   String get finish_default;
+
+  /// No description provided for @delete_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete address'**
+  String get delete_address;
+
+  /// No description provided for @edit_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit address'**
+  String get edit_address;
+
+  /// No description provided for @save_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Save address'**
+  String get save_address;
+
+  /// No description provided for @delete_address_message.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this address?'**
+  String get delete_address_message;
+
+  /// No description provided for @pickup_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Pickup address'**
+  String get pickup_address;
+
+  /// No description provided for @pickup_address_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose where we\'ll pick up your laundry'**
+  String get pickup_address_hint;
+
+  /// No description provided for @add_address_to_order.
+  ///
+  /// In en, this message translates to:
+  /// **'Add an address to complete your order'**
+  String get add_address_to_order;
+
+  /// No description provided for @selected_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected address'**
+  String get selected_address;
+
+  /// No description provided for @select_address_first.
+  ///
+  /// In en, this message translates to:
+  /// **'Select an address first'**
+  String get select_address_first;
 }
 
 class _AppLocalizationsDelegate

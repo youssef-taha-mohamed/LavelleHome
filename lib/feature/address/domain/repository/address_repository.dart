@@ -1,8 +1,8 @@
 import '../entities/address.dart';
-
 abstract class AddressRepository {
   Future<List<SavedAddress>> list();
   Future<SavedAddress> add(AddressData data);
+  Future<SavedAddress> update(String id, AddressData data);
   Future<void> delete(String id);
   Future<String?> getSelectedId();
   Future<void> setSelectedId(String? id);
@@ -57,6 +57,16 @@ class MockAddressRepository implements AddressRepository {
     );
     _items.add(saved);
     return saved;
+  }
+
+  @override
+  Future<SavedAddress> update(String id, AddressData data) async {
+    await _delay();
+    final updated = SavedAddress(id: id, data: data);
+    final index = _items.indexWhere((a) => a.id == id);
+    if (index == -1) throw Exception('address not found');
+    _items[index] = updated;
+    return updated;
   }
 
   @override

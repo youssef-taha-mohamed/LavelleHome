@@ -635,5 +635,14 @@
   "order_empty_title": "Your order is empty",
   "order_empty_message": "Go back and choose the services you need",
   "go_back": "Go back",
-  "finish_default": "Default"
+  "finish_default": "Default",
+  "delete_address": "Delete address",
+  "edit_address": "Edit address",
+  "save_address": "Save address",
+  "delete_address_message": "Are you sure you want to delete this address?",
+  "pickup_address": "Pickup address",
+  "pickup_address_hint": "Choose where we'll pick up your laundry",
+  "add_address_to_order": "Add an address to complete your order",
+  "selected_address": "Selected address",
+  "select_address_first": "Select an address first"
 }

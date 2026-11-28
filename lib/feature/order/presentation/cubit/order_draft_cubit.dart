@@ -1,4 +1,5 @@
 import '../../../../shared/widgets/shared_widgets.dart';
+import '../../../address/domain/entities/address.dart';
 import '../../../laundry/data/laundry_details.dart';
 import '../../domain/order_line.dart';
 import '../../domain/order_pricing.dart';
@@ -14,8 +15,8 @@ class OrderDraftCubit extends Cubit<OrderDraftState> {
     GarmentFinish? finish,
   ]) => '${group.id}|${item.name}|${finish?.name ?? ''}';
 
-  /// بدء طلب من مغسلة. لو مغسلة مختلفة عن السابقة تُمسح المسودة،
-  /// ولو نفسها نحتفظ بالأسطر ونحدّث رسوم التوصيل فقط.
+  /// بدء طلب من مغسلة. لو مغسلة مختلفة تُمسح الأسطر، ولو نفسها نحتفظ بها.
+  /// عنوان الاستلام يبقى دائماً (هو عنوان العميل وليس مرتبطاً بالمغسلة).
   void start({
     required String laundryId,
     required String laundryName,
@@ -27,7 +28,21 @@ class OrderDraftCubit extends Cubit<OrderDraftState> {
         laundryId: laundryId,
         laundryName: laundryName,
         deliveryFee: deliveryFee,
+        pickupAddress: state.pickupAddress,
         lines: same ? state.lines : const {},
+      ),
+    );
+  }
+
+  /// null = لا عنوان (مثلاً بعد حذف العنوان المختار)
+  void setPickupAddress(SavedAddress? address) {
+    emit(
+      OrderDraftState(
+        laundryId: state.laundryId,
+        laundryName: state.laundryName,
+        deliveryFee: state.deliveryFee,
+        pickupAddress: address,
+        lines: state.lines,
       ),
     );
   }
@@ -57,14 +72,7 @@ class OrderDraftCubit extends Cubit<OrderDraftState> {
       );
     }
 
-    emit(
-      OrderDraftState(
-        laundryId: state.laundryId,
-        laundryName: state.laundryName,
-        deliveryFee: state.deliveryFee,
-        lines: next,
-      ),
-    );
+    emit(state.withLines(next));
   }
 
   void increment(ServiceGroup group, PriceItem item, {GarmentFinish? finish}) =>
@@ -83,6 +91,6 @@ class OrderDraftCubit extends Cubit<OrderDraftState> {
         finish: finish,
       );
 
-  /// بعد إرسال الطلب أو إلغاؤه
-  void clear() => emit(const OrderDraftState());
+  /// بعد إرسال الطلب أو إلغاؤه (يُحتفظ بعنوان الاستلام للطلب القادم)
+  void clear() => emit(OrderDraftState(pickupAddress: state.pickupAddress));
 }

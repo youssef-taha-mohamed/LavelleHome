@@ -1862,4 +1862,34 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get finish_default => 'Par défaut';
+
+  @override
+  String get delete_address => 'Supprimer l\'adresse';
+
+  @override
+  String get edit_address => 'Modifier l\'adresse';
+
+  @override
+  String get save_address => 'Enregistrer l\'adresse';
+
+  @override
+  String get delete_address_message =>
+      'Êtes-vous sûr de vouloir supprimer cette adresse ?';
+
+  @override
+  String get pickup_address => 'Adresse de collecte';
+
+  @override
+  String get pickup_address_hint =>
+      'Choisissez où nous récupérerons votre linge';
+
+  @override
+  String get add_address_to_order =>
+      'Ajoutez une adresse pour finaliser votre commande';
+
+  @override
+  String get selected_address => 'Adresse sélectionnée';
+
+  @override
+  String get select_address_first => 'Sélectionnez d\'abord une adresse';
 }

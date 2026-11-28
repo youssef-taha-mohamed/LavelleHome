@@ -1,20 +1,20 @@
-// مسوّدة الطلب الحالية (مغسلة واحدة في كل مرة). يُوفَّر مرة واحدة فوق MaterialApp
-// لأن شاشات الطلب (الاختيار، الملخص، العنوان، الدفع) كلها تقرؤه.
-
 part of 'order_draft_cubit.dart';
-
 class OrderDraftState {
   final String? laundryId;
   final String? laundryName;
 
   /// رسوم التوصيل من بيانات المغسلة (null = غير محددة)
   final double? deliveryFee;
+
+  /// عنوان الاستلام والتسليم (عنوان محفوظ كامل)
+  final SavedAddress? pickupAddress;
   final Map<String, OrderLine> lines;
 
   const OrderDraftState({
     this.laundryId,
     this.laundryName,
     this.deliveryFee,
+    this.pickupAddress,
     this.lines = const {},
   });
 
@@ -34,4 +34,12 @@ class OrderDraftState {
       OrderPricing(subtotal: subtotal, deliveryFee: deliveryFee);
 
   double quantityOf(String key) => lines[key]?.quantity ?? 0;
+
+  OrderDraftState withLines(Map<String, OrderLine> lines) => OrderDraftState(
+    laundryId: laundryId,
+    laundryName: laundryName,
+    deliveryFee: deliveryFee,
+    pickupAddress: pickupAddress,
+    lines: lines,
+  );
 }

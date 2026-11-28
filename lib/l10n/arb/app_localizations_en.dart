@@ -1836,4 +1836,32 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get finish_default => 'Default';
+
+  @override
+  String get delete_address => 'Delete address';
+
+  @override
+  String get edit_address => 'Edit address';
+
+  @override
+  String get save_address => 'Save address';
+
+  @override
+  String get delete_address_message =>
+      'Are you sure you want to delete this address?';
+
+  @override
+  String get pickup_address => 'Pickup address';
+
+  @override
+  String get pickup_address_hint => 'Choose where we\'ll pick up your laundry';
+
+  @override
+  String get add_address_to_order => 'Add an address to complete your order';
+
+  @override
+  String get selected_address => 'Selected address';
+
+  @override
+  String get select_address_first => 'Select an address first';
 }

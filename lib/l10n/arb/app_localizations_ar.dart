@@ -1824,4 +1824,32 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get finish_default => 'افتراضي';
+
+  @override
+  String get delete_address => 'حذف العنوان';
+
+  @override
+  String get edit_address => 'تعديل العنوان';
+
+  @override
+  String get save_address => 'حفظ العنوان';
+
+  @override
+  String get delete_address_message =>
+      'هل أنت متأكد من رغبتك في حذف هذا العنوان؟';
+
+  @override
+  String get pickup_address => 'عنوان الاستلام';
+
+  @override
+  String get pickup_address_hint => 'اختر العنوان الذي سنستلم منه الملابس';
+
+  @override
+  String get add_address_to_order => 'أضف عنواناً لإتمام طلبك';
+
+  @override
+  String get selected_address => 'العنوان المختار';
+
+  @override
+  String get select_address_first => 'اختر عنواناً أولاً';
 }

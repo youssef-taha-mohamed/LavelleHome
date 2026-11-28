@@ -521,5 +521,14 @@
   "order_empty_title": "طلبك فارغ",
   "order_empty_message": "ارجع واختر الخدمات التي تحتاجها",
   "go_back": "رجوع",
-  "finish_default": "افتراضي"
+  "finish_default": "افتراضي",
+  "delete_address": "حذف العنوان",
+  "edit_address": "تعديل العنوان",
+  "save_address": "حفظ العنوان",
+  "delete_address_message": "هل أنت متأكد من رغبتك في حذف هذا العنوان؟",
+  "pickup_address": "عنوان الاستلام",
+  "pickup_address_hint": "اختر العنوان الذي سنستلم منه الملابس",
+  "add_address_to_order": "أضف عنواناً لإتمام طلبك",
+  "selected_address": "العنوان المختار",
+  "select_address_first": "اختر عنواناً أولاً"
 }

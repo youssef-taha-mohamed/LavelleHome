@@ -1,5 +1,4 @@
 part of 'location_cubit.dart';
-
 class LocationState {
   final bool isLoading; // التحميل الأول للعناوين
   final bool isLocating; // جاري تحديد الموقع الحالي
@@ -23,6 +22,7 @@ class LocationState {
     bool? locateFailed,
     List<SavedAddress>? addresses,
     SelectedLocation? selected,
+    bool clearSelected = false,
     LocationPermissionStatus? permission,
   }) {
     return LocationState(
@@ -30,7 +30,7 @@ class LocationState {
       isLocating: isLocating ?? this.isLocating,
       locateFailed: locateFailed ?? this.locateFailed,
       addresses: addresses ?? this.addresses,
-      selected: selected ?? this.selected,
+      selected: clearSelected ? null : (selected ?? this.selected),
       permission: permission ?? this.permission,
     );
   }
