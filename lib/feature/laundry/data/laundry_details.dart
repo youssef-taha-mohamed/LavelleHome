@@ -5,15 +5,25 @@ import 'module/laundry_model.dart';
 /// وحدة التسعير. القائمة مبدئية (قطعة/كيلو/متر) وتنتظر تأكيد نماذج التسعير الفعلية.
 enum PricingUnit { piece, kg, squareMeter }
 
+/// نوع الطلب. الطلب الواحد له نوع واحد، لأنه يحدد وسيلة المواصلة المناسبة لاستلامه.
+enum OrderKind { clothes, carpet }
+
+/// طريقة إنهاء الكي للقطعة: على علّاقة أو مطوية
+enum GarmentFinish { hanging, folded }
+
 class PriceItem {
   final String name;
   final double price;
   final PricingUnit unit;
 
+  /// قطع معروف أنها تعليق بطبيعتها (جاكيت، بالطو، بنطلون): لا يُسأل العميل عنها
+  final GarmentFinish? fixedFinish;
+
   const PriceItem({
     required this.name,
     required this.price,
     this.unit = PricingUnit.piece,
+    this.fixedFinish,
   });
 }
 
@@ -25,11 +35,19 @@ class ServiceGroup {
   final LaundryServiceType? type;
   final List<PriceItem> items;
 
+  /// نوع الطلب الذي تنتمي له الخدمة (ملابس أو سجاد)
+  final OrderKind kind;
+
+  /// الخدمة تتضمن كياً، فيختار العميل لكل قطعة: تعليق أم تطبيق
+  final bool hasFinishChoice;
+
   const ServiceGroup({
     required this.id,
     required this.name,
     this.type,
     this.items = const [],
+    this.kind = OrderKind.clothes,
+    this.hasFinishChoice = false,
   });
 }
 

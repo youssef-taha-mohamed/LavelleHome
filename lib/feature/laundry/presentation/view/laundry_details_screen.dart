@@ -1,5 +1,7 @@
 import '../../../../shared/widgets/shared_widgets.dart';
 import '../../../map/presentation/view/laundry_map_screen.dart';
+import '../../../order/presentation/view/service_selection_screen.dart';
+import '../../data/laundry_details.dart';
 import '../../data/module/laundry_model.dart';
 import '../../domain/repository/laundry_details_repo.dart';
 import '../cubits/laundry_details/laundry_details_cubit.dart';
@@ -63,7 +65,7 @@ class _DetailsView extends StatelessWidget {
         return Scaffold(
           bottomNavigationBar: summary == null
               ? null
-              : _StartOrderBar(laundry: summary),
+              : _StartOrderBar(laundry: summary, details: state.details),
           body: SingleChildScrollView(
             child: Stack(
               children: [
@@ -325,8 +327,9 @@ class _DetailsBody extends StatelessWidget {
 
 class _StartOrderBar extends StatelessWidget {
   final Laundry laundry;
+  final LaundryDetails? details; // null لحد ما تتحمّل التفاصيل
 
-  const _StartOrderBar({required this.laundry});
+  const _StartOrderBar({required this.laundry, this.details});
 
   @override
   Widget build(BuildContext context) {
@@ -378,7 +381,7 @@ class _StartOrderBar extends StatelessWidget {
                 icon: Icons.arrow_forward_rounded,
                 expand: false,
                 height: 50,
-                isDimmed: unavailable,
+                isDimmed: unavailable || details == null,
                 onTap: () {
                   if (unavailable) {
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -386,8 +389,9 @@ class _StartOrderBar extends StatelessWidget {
                     );
                     return;
                   }
-                  // TODO(خطوة 6): افتح اختيار الخدمات لهذه المغسلة
-                  _comingSoon(context, 'Step 6 · Service selection');
+                  final d = details;
+                  if (d == null) return; // التفاصيل لسه بتتحمّل
+                  openServiceSelection(context, details: d);
                 },
               ),
             ],

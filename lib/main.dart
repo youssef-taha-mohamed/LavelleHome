@@ -18,6 +18,7 @@ import 'package:provider/provider.dart';
 import 'core/di/dependency_injector.dart';
 import 'feature/botttom_nav_bar/provider/nav_bar.dart';
 import 'feature/cart/presentation/provider/provider.dart';
+import 'feature/order/presentation/cubit/order_draft_cubit.dart';
 import 'firebase_options.dart';
 import 'core/db/kv_db/hive.dart';
 import 'core/authentication/provider.dart';
@@ -205,6 +206,7 @@ Future<void> main() async {
             BlocProvider(create: (context) => DependencyInjector.languageCubit),
             // يُوفَّر مرة واحدة على مستوى التطبيق (فوق MaterialApp) ليراه الـ Shell والـ Checkout والخريطة.
             BlocProvider(create: (context) => DependencyInjector.locationCubit),
+            BlocProvider(create: (_) => OrderDraftCubit()),
             ChangeNotifierProvider(create: (context) => CartProvider.instance),
             ChangeNotifierProvider(
               create: (_) => NavigationProvider.instance,

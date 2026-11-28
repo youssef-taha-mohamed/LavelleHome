@@ -1,11 +1,3 @@
-// المسار: lib/feature/map/presentation/widgets/lavelle_map_canvas.dart
-// هذا الملف الوحيد الذي يعرف مزوّد الخرائط (flutter_map + OpenStreetMap).
-// للتحويل إلى Google Maps: أعد كتابة LavelleMapController و LavelleMapCanvas فقط.
-//
-// يحتاج: flutter pub add flutter_map latlong2
-// Android: صلاحية INTERNET في AndroidManifest.xml الرئيسي.
-// ملاحظة: خوادم OSM المجانية لا تناسب الإنتاج بحمل كبير، استخدم مزوّد تايلز
-// (MapTiler / Stadia / خادمك) بتغيير urlTemplate فقط.
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart' show LatLng;
 import '../../../../../shared/widgets/shared_widgets.dart';

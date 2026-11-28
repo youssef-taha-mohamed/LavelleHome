@@ -805,9 +805,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get order_history => 'سجل الطلبات';
 
   @override
-  String get order_summary => 'ملخص الطلب';
-
-  @override
   String get otp_resent_successfully => 'تمت إعادة إرسال رمز التحقق بنجاح';
 
   @override
@@ -1704,4 +1701,124 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get my_location => 'موقعي';
+
+  @override
+  String get select_services => 'اختر الخدمات';
+
+  @override
+  String get estimated_total => 'الإجمالي التقديري';
+
+  @override
+  String get order_total => 'الإجمالي';
+
+  @override
+  String get items_label => 'العناصر';
+
+  @override
+  String get review_order => 'مراجعة الطلب';
+
+  @override
+  String get select_services_hint => 'اختر خدمة واحدة على الأقل';
+
+  @override
+  String get select_services_first => 'اختر خدمة واحدة على الأقل للمتابعة';
+
+  @override
+  String get add_to_order => 'إضافة إلى الطلب';
+
+  @override
+  String get update_quantity => 'تحديث';
+
+  @override
+  String get remove_item => 'إزالة';
+
+  @override
+  String get enter_weight => 'أدخل الوزن (كجم)';
+
+  @override
+  String get enter_area => 'أدخل المساحة (م²)';
+
+  @override
+  String get quick_pick => 'اختيار سريع';
+
+  @override
+  String get item_total => 'إجمالي هذا الصنف';
+
+  @override
+  String get qty_unit_kg => 'كجم';
+
+  @override
+  String get qty_unit_sqm => 'م²';
+
+  @override
+  String get price_estimate_note =>
+      'الإجمالي تقديري وقد يتغير، أما أسعار الخدمات فثابتة كما حددتها المغسلة';
+
+  @override
+  String get order_kind_title => 'نوع الطلب';
+
+  @override
+  String get order_kind_note =>
+      'لكل طلب نوع واحد لتجهيز وسيلة الاستلام المناسبة';
+
+  @override
+  String get order_kind_clothes => 'ملابس';
+
+  @override
+  String get order_kind_carpet => 'سجاد';
+
+  @override
+  String get choose_order_kind_first => 'اختر نوع الطلب أولاً';
+
+  @override
+  String get change_order_kind_title => 'تغيير نوع الطلب؟';
+
+  @override
+  String get change_order_kind_message =>
+      'سيتم مسح الخدمات المختارة لأن الطلب الواحد له نوع واحد.';
+
+  @override
+  String get change_confirm => 'تغيير';
+
+  @override
+  String get finish_hanging => 'تعليق';
+
+  @override
+  String get finish_folded => 'تطبيق';
+
+  @override
+  String get finish_choice_hint => 'اختر تعليق أو تطبيق لكل قطعة';
+
+  @override
+  String get order_summary => 'ملخص الطلب';
+
+  @override
+  String get selected_services => 'الخدمات المختارة';
+
+  @override
+  String get edit_order => 'تعديل';
+
+  @override
+  String get subtotal => 'المجموع الفرعي';
+
+  @override
+  String get discount => 'الخصم';
+
+  @override
+  String get delivery_fee => 'رسوم التوصيل';
+
+  @override
+  String get continue_label => 'متابعة';
+
+  @override
+  String get order_pickup_hint => 'نوع الطلب يحدد وسيلة الاستلام المناسبة';
+
+  @override
+  String get order_empty_title => 'طلبك فارغ';
+
+  @override
+  String get order_empty_message => 'ارجع واختر الخدمات التي تحتاجها';
+
+  @override
+  String get go_back => 'رجوع';
 }

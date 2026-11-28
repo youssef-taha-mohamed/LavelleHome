@@ -808,9 +808,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get order_history => 'Order History';
 
   @override
-  String get order_summary => 'Order Summary';
-
-  @override
   String get otp_resent_successfully => 'OTP resent successfully';
 
   @override
@@ -1715,4 +1712,125 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get my_location => 'My location';
+
+  @override
+  String get select_services => 'Select services';
+
+  @override
+  String get estimated_total => 'Estimated total';
+
+  @override
+  String get order_total => 'Total';
+
+  @override
+  String get items_label => 'Items';
+
+  @override
+  String get review_order => 'Review order';
+
+  @override
+  String get select_services_hint => 'Select at least one service';
+
+  @override
+  String get select_services_first => 'Select at least one service to continue';
+
+  @override
+  String get add_to_order => 'Add to order';
+
+  @override
+  String get update_quantity => 'Update';
+
+  @override
+  String get remove_item => 'Remove';
+
+  @override
+  String get enter_weight => 'Enter weight (kg)';
+
+  @override
+  String get enter_area => 'Enter area (m²)';
+
+  @override
+  String get quick_pick => 'Quick pick';
+
+  @override
+  String get item_total => 'Item total';
+
+  @override
+  String get qty_unit_kg => 'kg';
+
+  @override
+  String get qty_unit_sqm => 'm²';
+
+  @override
+  String get price_estimate_note =>
+      'The total is an estimate and may change. Service prices are fixed as set by the laundry.';
+
+  @override
+  String get order_kind_title => 'Order type';
+
+  @override
+  String get order_kind_note =>
+      'Each order has one type so we can arrange the right pickup transport';
+
+  @override
+  String get order_kind_clothes => 'Clothes';
+
+  @override
+  String get order_kind_carpet => 'Carpets';
+
+  @override
+  String get choose_order_kind_first => 'Choose the order type first';
+
+  @override
+  String get change_order_kind_title => 'Change the order type?';
+
+  @override
+  String get change_order_kind_message =>
+      'Your selected services will be cleared because an order can have only one type.';
+
+  @override
+  String get change_confirm => 'Change';
+
+  @override
+  String get finish_hanging => 'On hanger';
+
+  @override
+  String get finish_folded => 'Folded';
+
+  @override
+  String get finish_choice_hint => 'Choose hanger or folded for each piece';
+
+  @override
+  String get order_summary => 'Order summary';
+
+  @override
+  String get selected_services => 'Selected services';
+
+  @override
+  String get edit_order => 'Edit';
+
+  @override
+  String get subtotal => 'Subtotal';
+
+  @override
+  String get discount => 'Discount';
+
+  @override
+  String get delivery_fee => 'Delivery fee';
+
+  @override
+  String get continue_label => 'Continue';
+
+  @override
+  String get order_pickup_hint =>
+      'The order type determines the right pickup transport';
+
+  @override
+  String get order_empty_title => 'Your order is empty';
+
+  @override
+  String get order_empty_message => 'Go back and choose the services you need';
+
+  @override
+  String get go_back => 'Go back';
 }

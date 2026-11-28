@@ -816,9 +816,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get order_history => 'Historique des commandes';
 
   @override
-  String get order_summary => 'Résumé de la commande';
-
-  @override
   String get otp_resent_successfully => 'Code OTP renvoyé avec succès';
 
   @override
@@ -1737,4 +1734,129 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get my_location => 'Ma position';
+
+  @override
+  String get select_services => 'Choisir les services';
+
+  @override
+  String get estimated_total => 'Total estimé';
+
+  @override
+  String get order_total => 'Total';
+
+  @override
+  String get items_label => 'Articles';
+
+  @override
+  String get review_order => 'Vérifier la commande';
+
+  @override
+  String get select_services_hint => 'Sélectionnez au moins un service';
+
+  @override
+  String get select_services_first =>
+      'Sélectionnez au moins un service pour continuer';
+
+  @override
+  String get add_to_order => 'Ajouter à la commande';
+
+  @override
+  String get update_quantity => 'Mettre à jour';
+
+  @override
+  String get remove_item => 'Retirer';
+
+  @override
+  String get enter_weight => 'Saisissez le poids (kg)';
+
+  @override
+  String get enter_area => 'Saisissez la surface (m²)';
+
+  @override
+  String get quick_pick => 'Choix rapide';
+
+  @override
+  String get item_total => 'Total de l\'article';
+
+  @override
+  String get qty_unit_kg => 'kg';
+
+  @override
+  String get qty_unit_sqm => 'm²';
+
+  @override
+  String get price_estimate_note =>
+      'Le total est estimatif et peut changer. Les tarifs des services sont fixés par la blanchisserie.';
+
+  @override
+  String get order_kind_title => 'Type de commande';
+
+  @override
+  String get order_kind_note =>
+      'Chaque commande a un seul type afin de prévoir le transport de collecte adapté';
+
+  @override
+  String get order_kind_clothes => 'Vêtements';
+
+  @override
+  String get order_kind_carpet => 'Tapis';
+
+  @override
+  String get choose_order_kind_first =>
+      'Choisissez d\'abord le type de commande';
+
+  @override
+  String get change_order_kind_title => 'Changer le type de commande ?';
+
+  @override
+  String get change_order_kind_message =>
+      'Les services sélectionnés seront effacés car une commande n\'a qu\'un seul type.';
+
+  @override
+  String get change_confirm => 'Changer';
+
+  @override
+  String get finish_hanging => 'Sur cintre';
+
+  @override
+  String get finish_folded => 'Plié';
+
+  @override
+  String get finish_choice_hint =>
+      'Choisissez cintre ou plié pour chaque pièce';
+
+  @override
+  String get order_summary => 'Résumé de la commande';
+
+  @override
+  String get selected_services => 'Services sélectionnés';
+
+  @override
+  String get edit_order => 'Modifier';
+
+  @override
+  String get subtotal => 'Sous-total';
+
+  @override
+  String get discount => 'Remise';
+
+  @override
+  String get delivery_fee => 'Frais de livraison';
+
+  @override
+  String get continue_label => 'Continuer';
+
+  @override
+  String get order_pickup_hint =>
+      'Le type de commande détermine le transport de collecte adapté';
+
+  @override
+  String get order_empty_title => 'Votre commande est vide';
+
+  @override
+  String get order_empty_message =>
+      'Revenez en arrière et choisissez les services dont vous avez besoin';
+
+  @override
+  String get go_back => 'Retour';
 }

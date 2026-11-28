@@ -1,6 +1,6 @@
 // المسار: lib/feature/laundry/data/laundry_details_repository.dart
 import 'package:flutter/material.dart' show TimeOfDay;
-import '../../../address/domain/entities/address.dart' show GeoPoint ;
+import '../../../address/domain/entities/address.dart' show GeoPoint;
 import '../../data/module/laundry_model.dart';
 import 'laundry_repository.dart';
 import '../../data/laundry_details.dart';
@@ -59,13 +59,17 @@ class MockLaundryDetailsRepository implements LaundryDetailsRepository {
     ];
   }
 
+  // laundry_details_repository.dart: استبدل من `static const _washing` حتى نهاية `_carpet` بالآتي
+
   static const _washing = ServiceGroup(
     id: 'washing',
     name: 'غسيل',
     type: LaundryServiceType.washing,
+    hasFinishChoice: true,
     items: [
       PriceItem(name: 'قميص', price: 12),
-      PriceItem(name: 'بنطلون', price: 14),
+      PriceItem(name: 'بنطلون', price: 14, fixedFinish: GarmentFinish.hanging),
+      PriceItem(name: 'جاكيت', price: 25, fixedFinish: GarmentFinish.hanging),
       PriceItem(name: 'غسيل بالكيلو', price: 30, unit: PricingUnit.kg),
     ],
   );
@@ -74,10 +78,13 @@ class MockLaundryDetailsRepository implements LaundryDetailsRepository {
     id: 'ironing',
     name: 'كي',
     type: LaundryServiceType.ironing,
+    hasFinishChoice: true,
     items: [
       PriceItem(name: 'قميص', price: 8),
-      PriceItem(name: 'بنطلون', price: 8),
       PriceItem(name: 'جلابية', price: 12),
+      PriceItem(name: 'بنطلون', price: 8, fixedFinish: GarmentFinish.hanging),
+      PriceItem(name: 'جاكيت', price: 12, fixedFinish: GarmentFinish.hanging),
+      PriceItem(name: 'بالطو', price: 15, fixedFinish: GarmentFinish.hanging),
     ],
   );
 
@@ -85,9 +92,10 @@ class MockLaundryDetailsRepository implements LaundryDetailsRepository {
     id: 'wash_iron',
     name: 'غسيل وكي',
     type: LaundryServiceType.washing,
+    hasFinishChoice: true,
     items: [
       PriceItem(name: 'قميص', price: 18),
-      PriceItem(name: 'بنطلون', price: 20),
+      PriceItem(name: 'بنطلون', price: 20, fixedFinish: GarmentFinish.hanging),
     ],
   );
 
@@ -106,6 +114,7 @@ class MockLaundryDetailsRepository implements LaundryDetailsRepository {
     id: 'carpet',
     name: 'تنظيف السجاد',
     type: LaundryServiceType.carpet,
+    kind: OrderKind.carpet,
     items: [
       PriceItem(name: 'سجاد عادي', price: 45, unit: PricingUnit.squareMeter),
       PriceItem(name: 'سجاد فاخر', price: 70, unit: PricingUnit.squareMeter),

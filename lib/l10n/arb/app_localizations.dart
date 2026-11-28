@@ -1612,12 +1612,6 @@ abstract class AppLocalizations {
   /// **'Order History'**
   String get order_history;
 
-  /// No description provided for @order_summary.
-  ///
-  /// In en, this message translates to:
-  /// **'Order Summary'**
-  String get order_summary;
-
   /// No description provided for @otp_resent_successfully.
   ///
   /// In en, this message translates to:
@@ -3327,6 +3321,240 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'My location'**
   String get my_location;
+
+  /// No description provided for @select_services.
+  ///
+  /// In en, this message translates to:
+  /// **'Select services'**
+  String get select_services;
+
+  /// No description provided for @estimated_total.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated total'**
+  String get estimated_total;
+
+  /// No description provided for @order_total.
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get order_total;
+
+  /// No description provided for @items_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Items'**
+  String get items_label;
+
+  /// No description provided for @review_order.
+  ///
+  /// In en, this message translates to:
+  /// **'Review order'**
+  String get review_order;
+
+  /// No description provided for @select_services_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Select at least one service'**
+  String get select_services_hint;
+
+  /// No description provided for @select_services_first.
+  ///
+  /// In en, this message translates to:
+  /// **'Select at least one service to continue'**
+  String get select_services_first;
+
+  /// No description provided for @add_to_order.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to order'**
+  String get add_to_order;
+
+  /// No description provided for @update_quantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get update_quantity;
+
+  /// No description provided for @remove_item.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get remove_item;
+
+  /// No description provided for @enter_weight.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter weight (kg)'**
+  String get enter_weight;
+
+  /// No description provided for @enter_area.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter area (m²)'**
+  String get enter_area;
+
+  /// No description provided for @quick_pick.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick pick'**
+  String get quick_pick;
+
+  /// No description provided for @item_total.
+  ///
+  /// In en, this message translates to:
+  /// **'Item total'**
+  String get item_total;
+
+  /// No description provided for @qty_unit_kg.
+  ///
+  /// In en, this message translates to:
+  /// **'kg'**
+  String get qty_unit_kg;
+
+  /// No description provided for @qty_unit_sqm.
+  ///
+  /// In en, this message translates to:
+  /// **'m²'**
+  String get qty_unit_sqm;
+
+  /// No description provided for @price_estimate_note.
+  ///
+  /// In en, this message translates to:
+  /// **'The total is an estimate and may change. Service prices are fixed as set by the laundry.'**
+  String get price_estimate_note;
+
+  /// No description provided for @order_kind_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Order type'**
+  String get order_kind_title;
+
+  /// No description provided for @order_kind_note.
+  ///
+  /// In en, this message translates to:
+  /// **'Each order has one type so we can arrange the right pickup transport'**
+  String get order_kind_note;
+
+  /// No description provided for @order_kind_clothes.
+  ///
+  /// In en, this message translates to:
+  /// **'Clothes'**
+  String get order_kind_clothes;
+
+  /// No description provided for @order_kind_carpet.
+  ///
+  /// In en, this message translates to:
+  /// **'Carpets'**
+  String get order_kind_carpet;
+
+  /// No description provided for @choose_order_kind_first.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the order type first'**
+  String get choose_order_kind_first;
+
+  /// No description provided for @change_order_kind_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Change the order type?'**
+  String get change_order_kind_title;
+
+  /// No description provided for @change_order_kind_message.
+  ///
+  /// In en, this message translates to:
+  /// **'Your selected services will be cleared because an order can have only one type.'**
+  String get change_order_kind_message;
+
+  /// No description provided for @change_confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get change_confirm;
+
+  /// No description provided for @finish_hanging.
+  ///
+  /// In en, this message translates to:
+  /// **'On hanger'**
+  String get finish_hanging;
+
+  /// No description provided for @finish_folded.
+  ///
+  /// In en, this message translates to:
+  /// **'Folded'**
+  String get finish_folded;
+
+  /// No description provided for @finish_choice_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose hanger or folded for each piece'**
+  String get finish_choice_hint;
+
+  /// No description provided for @order_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Order summary'**
+  String get order_summary;
+
+  /// No description provided for @selected_services.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected services'**
+  String get selected_services;
+
+  /// No description provided for @edit_order.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit_order;
+
+  /// No description provided for @subtotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Subtotal'**
+  String get subtotal;
+
+  /// No description provided for @discount.
+  ///
+  /// In en, this message translates to:
+  /// **'Discount'**
+  String get discount;
+
+  /// No description provided for @delivery_fee.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery fee'**
+  String get delivery_fee;
+
+  /// No description provided for @continue_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continue_label;
+
+  /// No description provided for @order_pickup_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'The order type determines the right pickup transport'**
+  String get order_pickup_hint;
+
+  /// No description provided for @order_empty_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Your order is empty'**
+  String get order_empty_title;
+
+  /// No description provided for @order_empty_message.
+  ///
+  /// In en, this message translates to:
+  /// **'Go back and choose the services you need'**
+  String get order_empty_message;
+
+  /// No description provided for @go_back.
+  ///
+  /// In en, this message translates to:
+  /// **'Go back'**
+  String get go_back;
 }
 
 class _AppLocalizationsDelegate
